@@ -1,4 +1,4 @@
-module github.com/imfing/hextra-starter-template
+module github.com/sptr11/sptr11.github.io
 
 go 1.21
 

@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: My Site
+title: a blog
 
 # import hextra as module
 module:
@@ -18,29 +18,34 @@ markup:
 
 menu:
   main:
-    - name: Docs
-      pageRef: /docs
+    - name: learning
+      pageRef: /learning
       weight: 1
-    - name: About
-      pageRef: /about
+    - name: thoughts
+      pageRef: /thoughts
       weight: 2
-    - name: Contact ↗
-      url: "https://github.com/imfing"
+    - name: cooking
+      pageRef: /cooking
       weight: 3
-    - name: Search
+    - name: parenting
+      pageRef: /parenting
       weight: 4
-      params:
-        type: search
-    - name: GitHub
+    - name: about
+      pageRef: /about
       weight: 5
-      url: "https://github.com/imfing/hextra-starter-template"
+
+  sidebar:
+    - name: More
       params:
-        icon: github
-    - name: Twitter
-      weight: 6
-      url: "https://twitter.com/"
-      params:
-        icon: x-twitter
+        type: separator
+      weight: 1
+    - name: "About"
+      pageRef: "/about"
+      weight: 2
+    - name: "Hugo Docs ↗"
+      url: "https://gohugo.io/documentation/"
+      weight: 3
+   
 
 params:
   navbar:
@@ -48,9 +53,10 @@ params:
     displayLogo: false
 
   footer:
-    displayCopyright: false
-    displayPoweredBy: true
+    displayCopyright: true
+    displayPoweredBy: false
 
-  editURL:
-    enable: true
-    base: "https://github.com/imfing/hextra-starter-template/edit/main/content"
+  theme:
+    # light | dark | system
+    default: light
+    displayToggle: true
