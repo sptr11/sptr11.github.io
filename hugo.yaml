@@ -18,11 +18,11 @@ markup:
 
 menu:
   main:
-    - name: learning
-      pageRef: /learning
+    - name: structured thoughts
+      pageRef: /journal
       weight: 1
-    - name: thoughts
-      pageRef: /thoughts
+    - name: unstructured stream
+      pageRef: /moments
       weight: 2
     - name: about
       pageRef: /about
