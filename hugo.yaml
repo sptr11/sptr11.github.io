@@ -1,5 +1,5 @@
 # Hugo configuration file
-title: a blog
+title: sumit's blog
 
 # import hextra as module
 module:
@@ -18,10 +18,10 @@ markup:
 
 menu:
   main:
-    - name: structured thoughts
+    - name: structured
       pageRef: /journal
       weight: 1
-    - name: unstructured stream
+    - name: unstructured
       pageRef: /moments
       weight: 2
     - name: about
