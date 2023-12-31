@@ -24,15 +24,9 @@ menu:
     - name: thoughts
       pageRef: /thoughts
       weight: 2
-    - name: cooking
-      pageRef: /cooking
-      weight: 3
-    - name: parenting
-      pageRef: /parenting
-      weight: 4
     - name: about
       pageRef: /about
-      weight: 5
+      weight: 3
 
   sidebar:
     - name: More
@@ -42,9 +36,7 @@ menu:
     - name: "About"
       pageRef: "/about"
       weight: 2
-    - name: "Hugo Docs ↗"
-      url: "https://gohugo.io/documentation/"
-      weight: 3
+  
    
 
 params:
@@ -59,4 +51,4 @@ params:
   theme:
     # light | dark | system
     default: light
-    displayToggle: true
+    displayToggle: false
