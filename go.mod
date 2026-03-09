@@ -2,4 +2,4 @@ module github.com/sptr11/sptr11.github.io
 
 go 1.21
 
-require github.com/imfing/hextra v0.7.0 // indirect
+require github.com/adityatelange/hugo-PaperMod v0.0.0-20260308172054-10d3dcc0e05c // indirect

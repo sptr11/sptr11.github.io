@@ -1,54 +1,42 @@
 # Hugo configuration file
 title: sumit's blog
 
-# import hextra as module
+# import PaperMod as module
 module:
   imports:
-  - path: github.com/imfing/hextra
+  - path: github.com/adityatelange/hugo-PaperMod
 
 markup:
-  # allow raw html
   goldmark:
     renderer:
       unsafe: true
-
-  # enable hextra syntax highlight
   highlight:
     noClasses: false
 
 menu:
   main:
     - name: structured
-      pageRef: /journal
+      url: /journal/
       weight: 1
     - name: unstructured
-      pageRef: /moments
+      url: /moments/
       weight: 2
     - name: about
-      pageRef: /about
+      url: /about/
       weight: 3
 
-  sidebar:
-    - name: More
-      params:
-        type: separator
-      weight: 1
-    - name: "About"
-      pageRef: "/about"
-      weight: 2
-  
-   
-
 params:
-  navbar:
-    displayTitle: true
-    displayLogo: false
+  defaultTheme: light
+  disableThemeToggle: true
+  ShowReadingTime: true
+  ShowBreadCrumbs: true
+  ShowPostNavLinks: true
+  ShowShareButtons: false
 
-  footer:
-    displayCopyright: true
-    displayPoweredBy: false
+  homeInfoParams:
+    Title: a blog
+    Content: >
+      Welcome to Sumit's corner of the internet.
 
-  theme:
-    # light | dark | system
-    default: light
-    displayToggle: false
+  cover:
+    hidden: true
