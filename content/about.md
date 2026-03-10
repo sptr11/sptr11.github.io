@@ -29,7 +29,7 @@ I build products at the intersection of AI and the physical world. Currently **H
 - **Druva** -- Launched Enterprise File Sync & Share, hit $1.5M in bookings in 6 months, then recommended killing it when the market shifted. Also set up Druva Labs, their product incubator.
 - **Mentii** -- Founded an alumni mentoring platform adopted by 11 US universities, facilitating 6,000+ connections daily.
 
-**What I care about:** Complexity at scale. High-stakes systems where errors cost real money. Making AI useful in messy, real-world operations -- not just polished demos. I've been building AI-native products since before it was fashionable.
+**What I care about:** Simplifying complexity at scale. High-stakes systems where errors cost real money. Making AI useful in messy, real-world operations -- not just polished demos. I've been building AI-native products since before it was fashionable.
 
 **Education:** B.Tech CS, IIT Guwahati | MBA, Columbia Business School
 
