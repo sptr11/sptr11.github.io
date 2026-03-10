@@ -1,5 +1,5 @@
 ---
-title: "What knowledge workers can learn from developers about working with AI."
+title: "What Developers Figured Out About Working With AI"
 date: 2026-03-09
 summary: "The market analysis could describe any market. The strategy could belong to any company. The PRD passes a casual read and collapses under the first real question. What can we learn from how developers work with AI?"
 tags: ["ai", "product-management", "engineering"]
