@@ -32,6 +32,7 @@ params:
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowShareButtons: false
+  mainSections: ["journal", "moments"]
 
   homeInfoParams:
     Title: a blog
