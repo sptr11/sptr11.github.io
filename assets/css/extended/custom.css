@@ -1,0 +1,345 @@
+/* ── Typography ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --gap: 28px;
+  --radius: 10px;
+}
+
+body {
+  font-family: var(--font-sans);
+  letter-spacing: -0.011em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Refined color palette ── */
+:root {
+  --theme: #fff;
+  --entry: #f9fafb;
+  --primary: #1a1a2e;
+  --secondary: #6b7280;
+  --tertiary: #f3f4f6;
+  --border: #e5e7eb;
+  --content: #374151;
+  --code-bg: #f8f9fa;
+  --hljs-bg: #f8f9fa;
+}
+
+/* ── Header & Nav ── */
+.nav {
+  max-width: 720px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+#menu a {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
+  color: var(--secondary);
+  transition: color 0.2s ease;
+}
+
+#menu a:hover,
+#menu a.active {
+  color: var(--primary);
+}
+
+.logo a {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+/* ── Layout ── */
+.main {
+  max-width: 720px;
+}
+
+/* ── Homepage ── */
+.first-entry {
+  border: none;
+  min-height: auto;
+}
+
+.home-info .entry-content {
+  font-size: 15px;
+  color: var(--secondary);
+  line-height: 1.7;
+}
+
+.home-info h1 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+/* ── Post list ── */
+.post-entry {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  padding: 24px 28px;
+  background: var(--theme);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.post-entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.post-entry:not(:first-child) {
+  border-top: 1px solid var(--border);
+}
+
+.entry-header h2 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.entry-content {
+  font-size: 14px;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+.post-meta {
+  font-size: 13px;
+  color: var(--secondary);
+  gap: 8px;
+}
+
+/* ── Article / Single post ── */
+.post-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.post-content {
+  font-size: 16.5px;
+  line-height: 1.8;
+  color: var(--content);
+}
+
+.post-content h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 48px;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+.post-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 36px;
+  margin-bottom: 12px;
+}
+
+.post-content p {
+  margin-bottom: 20px;
+}
+
+.post-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-decoration-color: var(--border);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.2s ease;
+}
+
+.post-content a:hover {
+  text-decoration-color: var(--primary);
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--primary);
+  padding-left: 20px;
+  margin: 28px 0;
+  font-style: italic;
+  color: var(--secondary);
+}
+
+.post-content img {
+  border-radius: var(--radius);
+  margin: 32px 0;
+}
+
+.post-content ul,
+.post-content ol {
+  padding-left: 24px;
+  margin-bottom: 20px;
+}
+
+.post-content li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+/* ── Code blocks ── */
+.post-content code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.post-content pre {
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid var(--border);
+}
+
+.post-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.highlight pre {
+  border-radius: var(--radius) !important;
+}
+
+/* ── Breadcrumbs ── */
+.breadcrumbs {
+  font-size: 13px;
+  color: var(--secondary);
+  margin-bottom: 24px;
+}
+
+.breadcrumbs a {
+  color: var(--secondary);
+}
+
+.breadcrumbs a:hover {
+  color: var(--primary);
+}
+
+/* ── Tags ── */
+.post-tags a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  background: var(--tertiary);
+  color: var(--secondary);
+  border-radius: 6px;
+  padding: 4px 12px;
+  transition: background 0.2s ease;
+}
+
+.post-tags a:hover {
+  background: var(--border);
+  color: var(--primary);
+}
+
+/* ── Footer ── */
+.footer {
+  font-size: 13px;
+  color: var(--secondary);
+  opacity: 0.7;
+}
+
+/* ── Post navigation ── */
+.paginav {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+  margin-top: 48px;
+  padding-top: 24px;
+  gap: 16px;
+}
+
+.paginav a {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 16px 20px;
+  transition: background 0.2s ease;
+}
+
+.paginav a:hover {
+  background: var(--tertiary);
+}
+
+/* ── Reading time & meta spacing ── */
+.post-meta {
+  margin-top: 8px;
+  margin-bottom: 32px;
+}
+
+/* ── Horizontal rules ── */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 32px 0;
+}
+
+/* ── Section title (list pages) ── */
+.terms-tags a {
+  font-size: 14px;
+  border-radius: 8px;
+}
+
+/* ── Smooth scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Responsive tweaks ── */
+/* ── About page ── */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 8px;
+}
+
+.about-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.about-intro p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--secondary);
+  margin: 0;
+}
+
+/* ── Responsive tweaks ── */
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 26px;
+  }
+
+  .post-content {
+    font-size: 16px;
+  }
+
+  .post-entry {
+    padding: 20px;
+  }
+
+  .about-intro {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -29,15 +29,15 @@ params:
   defaultTheme: light
   disableThemeToggle: true
   ShowReadingTime: true
-  ShowBreadCrumbs: true
+  ShowBreadCrumbs: false
   ShowPostNavLinks: true
   ShowShareButtons: false
   mainSections: ["journal", "moments"]
 
   homeInfoParams:
-    Title: a blog
+    Title: "sumit's blog"
     Content: >
-      Welcome to Sumit's corner of the internet.
+      Writing about building products, working with AI, and the messy reality of shipping things.
 
   cover:
     hidden: true

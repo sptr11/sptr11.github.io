@@ -2,10 +2,10 @@
 title: my saga
 ---
 
-<div style="display: flex; align-items: center;">
-    <img src="/profile.png" alt="Sumit's Profile Picture" style="width: 100px; margin-right: 20px;">
+<div class="about-intro">
+    <img src="/profile.png" alt="Sumit" class="about-photo">
     <p>
-        &#128075; This is Sumit. A reborn-engineer, twice entrepreneur, recovered MBA & management consultant. A dad still learning on the job, and a lazy cook. Each step, each stumble, in this short life has taught me a little. Perhaps.
+        This is Sumit. A reborn-engineer, twice entrepreneur, recovered MBA & management consultant. A dad still learning on the job, and a lazy cook. Each step, each stumble, in this short life has taught me a little. Perhaps.
     </p>
 </div>
 
