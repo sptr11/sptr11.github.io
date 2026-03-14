@@ -117,7 +117,7 @@ The tool covers the full planning workflow that EMs, TPMs, and PMs actually go t
   <!-- Before -->
   <text x="16" y="50" font-size="10" font-weight="600" fill="#B45309" font-family="'JetBrains Mono', monospace">BEFORE</text>
   <rect x="80" y="36" width="420" height="28" rx="3" fill="none" stroke="#D4D4DA" stroke-width="1"/>
-  <rect x="80" y="36" width="84" height="28" rx="3 0 0 3" fill="#E8E8ED"/>
+  <rect x="80" y="36" width="84" height="28" fill="#E8E8ED"/>
   <text x="122" y="54" text-anchor="middle" font-size="9" fill="#4A4A4F" font-family="'Inter', sans-serif">Ping EMs</text>
   <rect x="164" y="36" width="105" height="28" fill="#DDDDE2"/>
   <text x="216" y="54" text-anchor="middle" font-size="9" fill="#4A4A4F" font-family="'Inter', sans-serif">Wait for replies</text>
@@ -125,7 +125,7 @@ The tool covers the full planning workflow that EMs, TPMs, and PMs actually go t
   <text x="311" y="54" text-anchor="middle" font-size="9" fill="#4A4A4F" font-family="'Inter', sans-serif">Collate</text>
   <rect x="353" y="36" width="84" height="28" fill="#CCCCD2"/>
   <text x="395" y="54" text-anchor="middle" font-size="9" fill="#4A4A4F" font-family="'Inter', sans-serif">Format</text>
-  <rect x="437" y="36" width="63" height="28" rx="0 3 3 0" fill="#C0C0C8"/>
+  <rect x="437" y="36" width="63" height="28" fill="#C0C0C8"/>
   <text x="468" y="54" text-anchor="middle" font-size="9" fill="#4A4A4F" font-family="'Inter', sans-serif">Send</text>
   <text x="504" y="74" text-anchor="end" font-size="11" font-weight="600" fill="#B45309" font-family="'JetBrains Mono', monospace">~3 hrs</text>
 
