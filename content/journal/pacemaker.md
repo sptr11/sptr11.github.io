@@ -7,7 +7,7 @@ tags: ["product", "engineering", "side-project"]
 
 Every engineering org I've worked in has the same artifact. A Google Sheet with one tab per pod, engineers down the left, weeks across the top, color-coded cells for project assignments. It gets built during planning week, looks impressive for about 48 hours, and quietly rots until someone asks "wait, is Alice actually free in week 7?" and the answer requires 20 minutes of mental math across three tabs.
 
-I've rebuilt this spreadsheet at least six times across different companies. Each time, I thought the problem was the specific spreadsheet. It wasn't. The problem is structural.
+I've rebuilt this spreadsheet multiple times across different companies. Each time, I thought the problem was the specific spreadsheet. It wasn't. The problem is structural.
 
 ## The spreadsheet can't do the math
 
