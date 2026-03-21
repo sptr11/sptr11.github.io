@@ -1,36 +1,20 @@
 ---
-title: my saga
+title: about
 ---
 
 <div class="about-intro">
     <img src="/profile.png" alt="Sumit" class="about-photo">
     <p>
-        This is Sumit. A reborn-engineer, twice entrepreneur, recovered MBA & management consultant. A dad still learning on the job, and a lazy cook. Each step, each stumble, in this short life has taught me a little. Perhaps.
+        Sumit. Product leader, two-time founder, recovering management consultant. Based in San Francisco.
     </p>
 </div>
 
-> "I am always doing that which I cannot do, in order that I may learn how to do it."
-> \- Pablo Picasso
-
 ---
 
-### the longer version
+I build products at the intersection of AI and the physical world. Currently at [Motive](https://gomotive.com), where I lead tracking, maintenance, fuel, compliance, and the telematics platform underneath all of it.
 
-I build products at the intersection of AI and the physical world. Currently **Head of Product, Fleet & Telematics at [Motive](https://gomotive.com)** -- where I lead tracking, maintenance, fuel, compliance, and the telematics platform serving **100k+ customers** with over a **million connected assets**. We use AI to automate workflows that were previously manual, and we make it work reliably at scale, not just in demos.
+The thread through my career is launching things from scratch. I co-founded Bain's venture builder practice and scaled it across APAC. Built a product and engineering team from zero for an AI-powered travel company in Berlin. Created one of the first unified messaging APIs that worked across Facebook, WeChat, Line, and Viber. Started an alumni mentoring platform adopted by universities across the US. Co-founded an AI startup for SaaS sellers, shipped the products, raised the money, ran out of it.
 
-**Background:** CS undergrad (IIT Guwahati) → strategy consulting (Bain & Company, founding team of their India office) → Columbia MBA → building and shipping products ever since.
+Each of those taught me something different about what it takes to go from nothing to something real. The consulting years taught me how to frame problems. The startup years taught me that framing is worthless without execution. The product years taught me that execution without taste produces mediocre things that technically work.
 
-**The thread through my career is launching new things from scratch:**
-
-- **Superwin.ai** -- Co-founded an AI startup (Techstars-backed) building tools for SaaS sellers. Built the team, shipped the products, raised the money, ran out of it. The full founder experience.
-- **Bain Innovation Exchange** -- Co-founded Bain's venture builder consulting practice. Sold it, built it, scaled it across APAC.
-- **Comtravo** (now Navan) -- CPO. Built the product and eng team from zero for an AI-powered, no-UI travel product in Berlin. Got them to Series A.
-- **Nexmo** (acquired by Vonage) -- Created the Chat API product line -- one of the first unified messaging APIs across Facebook, WeChat, Line, and Viber. Helped enable the acquisition.
-- **Druva** -- Launched Enterprise File Sync & Share, hit $1.5M in bookings in 6 months, then recommended killing it when the market shifted. Also set up Druva Labs, their product incubator.
-- **Mentii** -- Founded an alumni mentoring platform adopted by 11 US universities, facilitating 6,000+ connections daily.
-
-**What I care about:** Simplifying complexity at scale. High-stakes systems where errors cost real money. Making AI useful in messy, real-world operations -- not just polished demos. I've been building AI-native products since before it was fashionable.
-
-**Education:** B.Tech CS, IIT Guwahati | MBA, Columbia Business School
-
-Based in San Francisco.
+I studied computer science, then spent years in strategy consulting before switching to building. I've been working on AI-native products since before it was fashionable.

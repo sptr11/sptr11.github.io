@@ -15,10 +15,10 @@ markup:
 
 menu:
   main:
-    - name: structured
+    - name: essays
       url: /journal/
       weight: 1
-    - name: unstructured
+    - name: notes
       url: /moments/
       weight: 2
     - name: about
@@ -33,11 +33,6 @@ params:
   ShowPostNavLinks: true
   ShowShareButtons: false
   mainSections: ["journal", "moments"]
-
-  homeInfoParams:
-    Title: "sumit's blog"
-    Content: >
-      Writing about building products, working with AI, and the messy reality of shipping things.
 
   cover:
     hidden: true

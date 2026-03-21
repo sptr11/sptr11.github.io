@@ -1,3 +1,3 @@
 ---
-title: "structured"
+title: "essays"
 ---
