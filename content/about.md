@@ -5,7 +5,7 @@ title: about
 <div class="about-intro">
     <img src="/profile.png" alt="Sumit" class="about-photo">
     <p>
-        Sumit. Product leader, two-time founder, recovering management consultant. Based in San Francisco.
+        Sumit. Builder, two-time founder, recovering management consultant. Based in San Francisco.
     </p>
 </div>
 
