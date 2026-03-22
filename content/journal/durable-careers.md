@@ -5,17 +5,17 @@ summary: "Single-domain expertise was a bet on patience. AI collapsed the cost o
 tags: ["ai", "careers", "labor-market"]
 ---
 
-Anthropic's recent labor study got me thinking about the value and place of expertise today.
+Anthropic's recent labor study was fascinating and got me thinking about the value and place of expertise today.
 
-Single-domain expertise was a bet on patience. You learned something few others would sit still long enough to learn. That was the value. It worked for decades. Specialized knowledge was locked away in textbooks and certifications and years of repetitive practice.
+Single-domain expertise looks like a bet on patience. You learned something few others would sit still long enough to learn. That was the value. It worked for decades. All that specialized knowledge was locked away in textbooks and certifications and years of repetitive practice.
 
-AI collapsed the cost of patience to near zero.
+With AI the cost of patience collapsed to near zero.
 
-Cross-domain expertise is a different bet. A bet on perspective. You operated across contexts. You learned how functions collide. You figured out how to work the seams. AI hasn't touched that. If anything, fewer people are doing it now than before.
+Cross-domain expertise looks like a different bet. A bet on perspective. You operated across contexts. You learned how functions collide. You figured out how to work the seams. AI hasn't touched that. If anything, there are fewer people doing it now than before.
 
 ## Careers and AI exposure
 
-Andrej Karpathy built a visualization of Bureau of Labor Statistics data [1]. It scores 342 occupations on a 0-to-10 AI exposure scale. The exposure scores are rough estimates. But the BLS growth projections tell a clearer story.
+Andrej Karpathy built a visualization of Bureau of Labor Statistics data [1]. It scores 342 occupations on a 0-to-10 AI exposure scale. We're still early in this cycle, so the exposure scores are rough estimates. But the BLS growth projections tell a clearer story.
 
 <div style="max-width: 520px; margin: 2em auto; font-family: 'Inter', -apple-system, sans-serif;">
 <svg viewBox="0 0 520 310" xmlns="http://www.w3.org/2000/svg" style="width: 100%;">
@@ -56,7 +56,7 @@ Andrej Karpathy built a visualization of Bureau of Labor Statistics data [1]. It
 </svg>
 </div>
 
-The roles projected to shrink are digital, single-domain knowledge work. Bookkeeping. Programming. Customer service. The roles projected to grow involve physical presence or cross-domain judgment.
+The roles projected to shrink are digital, single-domain knowledge work. Bookkeeping. Programming. Customer service. The roles projected to grow tend to involve physical presence or cross-domain judgment.
 
 Anthropic published a labor market study [2] with a measure they call "observed exposure." It separates what AI *can* theoretically do from what it *actually* does.
 
@@ -76,19 +76,23 @@ Anthropic published a labor market study [2] with a measure they call "observed 
 </svg>
 </div>
 
-Computer and math occupations: 94% theoretical exposure, 33% actual. That 33% is real and probably rising. But there's a wide gap between what AI can do and what people are using it for. When I look at what sits in that gap, it tends to be work that crosses boundaries. Judgment that spans contexts.
+Computer and math occupations: 94% theoretical, 33% actual. That 33% is real and probably rising. But there's still a big space between what AI can do and what people are actually using it for. And when I look at what sits in that space, it seems to be work that crosses boundaries. Judgment that spans contexts.
 
-Snowflake laid off its entire technical writing team recently [3]. Not a broad reduction. A targeted cut. That specificity is more telling than the headline layoffs at other companies.
+Snowflake laid off its entire technical writing team recently [3]. Targeted cuts. More telling to me than the broad layoffs at other companies.
 
-Technical writing is single-domain. Highly digital. Structured and rule-bound. AI produces a competent draft. Often a competent final version.
+Technical writing is single-domain. Highly digital. Structured and rule-bound. AI can produce a competent draft. Often a competent final version.
 
 ## Connect the dots to thrive
 
-The people thriving with AI tend to be those who operate across contexts and carry lessons between them.
+The people who seem to be thriving with AI are often those who operate across contexts. They carry lessons between them.
 
-Data scientists score a 9 in exposure. But they project 34% growth. Data science has always been cross-domain. The job is translating between statisticians, customers, engineers, product managers, and executives. AI makes each individual translation faster. It doesn't replace the person who knows which translation matters right now.
+The roles that seem harder to automate are the ones that touch multiple surfaces.
+
+Data scientists score a 9 in exposure. But they project 34% growth. Data science has always been cross-domain. The job is translating between statisticians, customers, engineers, product managers, and executives.
 
 A programmer who spent time in customer support understands failure modes that don't show up in code review. An HR specialist who worked in engineering management knows which policies will get followed and which will get routed around.
+
+The common thread is operating. Making decisions. Absorbing consequences. Building intuition in more than one place.
 
 <div style="max-width: 440px; margin: 2em auto; font-family: 'Inter', -apple-system, sans-serif;">
 <svg viewBox="0 0 440 300" xmlns="http://www.w3.org/2000/svg" style="width: 100%;">
@@ -118,17 +122,15 @@ A programmer who spent time in customer support understands failure modes that d
 </svg>
 </div>
 
-The common thread is operating. Making decisions. Absorbing consequences. Building intuition in more than one place.
-
-I mean something specific. Real depth in two or three areas. And using the intersections to see things that stay hidden when you look from only one angle.
+I mean something specific here. Real depth in two or three areas. And using the intersections to see things that stay hidden when you look from only one angle.
 
 ## Go wide to become durable
 
-I keep picturing the copywriter who does user research. The accountant who learns operations. The marketer who understands data infrastructure. Each new domain doesn't just add knowledge. It multiplies connections.
+I keep picturing the copy writer who does user research. The accountant who learns operations. The marketer who understands data infrastructure. Each new domain doesn't just add knowledge. It multiplies connections.
 
-143 million American jobs sit on a spectrum [1]. Fully exposed on one end. Fully insulated on the other. The insulated end is physical work. Somewhere between your current depth and the next domain over, there's a seam.
+143 million American jobs sit on a spectrum [1]. Fully exposed on one end. Fully insulated on the other. The insulated end is physical work. Somewhere between our current depth and the next domain over, there's a seam.
 
-That seam is worth finding. Worth operating in. Worth spending time in.
+I think that seam is worth finding. Worth operating in. Worth spending time in.
 
 That might be where durable careers get built next. Maybe.
 
