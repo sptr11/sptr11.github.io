@@ -31,3 +31,5 @@ Sharing turned out to be the harder product problem. A link pasted into Slack ha
 Shared links carry the team's handle: `cristina.cc/finch-labs/a/q3-planning-brainstorm`. A teammate who's signed in lands straight on the artifact, in that team's context. A teammate who isn't sees a sign-in page branded with the team's name, then goes back to the artifact afterward. Someone with a matching work email domain joins automatically. Everyone else gets a clear "not accessible" page. Owners can rename a handle, and the old one keeps resolving so links already in Slack and email don't break.
 
 Cristina was bootstrapped from [seriousvibes]({{< ref "seriousvibes" >}}), and it's the first project that started with those rules instead of discovering them. It's in early preview with a waitlist, and the first 25 artifacts are free.
+
+Cristina is live at [cristina.cc](https://cristina.cc).

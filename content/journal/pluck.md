@@ -35,3 +35,5 @@ I shipped a polished design system, then found it broke the live form renderer. 
 Then Render's free Postgres tier expired and deleted the production database. No warning, no export. The health check kept reporting "ok" the whole time because the startup database check swallowed its own error. The fix was one line. Learning that I needed it cost every form and submission in the system.
 
 Each of those mistakes went into a starter I now use for every new project. That's the next post.
+
+Pluck is live at [pluck.one](https://pluck.one).
