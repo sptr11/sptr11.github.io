@@ -1,41 +1,39 @@
 ---
-title: "seriousvibes: A Starter Kit That Teaches Coding Agents the Rules"
+title: "seriousvibes: A Starter Kit for Building Apps With Coding Agents"
 date: 2026-10-17
 draft: true
-summary: "Coding agents imitate the code around them. seriousvibes makes sure that code is right from the first commit."
+summary: "Coding agents copy the patterns in your codebase. An empty project gives them nothing to copy, so each feature gets built a different way. seriousvibes starts them with the right patterns."
 tags: ["engineering", "ai", "side-project"]
 ---
 
-A coding agent can write 10,000 lines of code in an afternoon. Much of it will need rewriting. The copy overclaims, the database schema changes next month, colors are hardcoded into dozens of components, and a query forgets which customer's data it is reading. The result looks like a product but costs more to fix than to rebuild.
+Coding agents are fast at producing an app and bad at keeping it consistent. Ask one for ten features and you get ten slightly different ways of doing things. One route checks permissions and the next doesn't. One page uses the brand color and the next hardcodes a hex value. By the second month, changing anything means changing it in ten places.
 
-[seriousvibes](https://sptr11.github.io/seriousvibes/) is a starter kit meant to prevent that. It grew out of the mistakes made building [Pluck]({{< ref "pluck" >}}).
+The reason is that agents learn from the code around them. When an agent adds a feature, it looks at what's already in the project and does something similar. In a fresh project there's nothing to look at, so it improvises, and it improvises differently each time.
 
-## The idea
+[seriousvibes](https://sptr11.github.io/seriousvibes/) is a starter kit that gives the agent something good to copy from the first prompt.
 
-Agents imitate. When an agent writes a new feature, it looks at the existing code and follows its patterns. If existing queries are scoped to a single customer, new ones will be too. If one component contains a hardcoded color, others soon will.
+## What's in it
 
-So seriousvibes ships a small working app, with sign-in, team workspaces, API keys, a settings page, and tests, in which every line already follows the rules. A file called `AGENTS.md` states those rules in plain English. Codex, Cursor, and Copilot read it automatically, and Claude Code reads it through `CLAUDE.md`. The agent gets both instructions and examples.
+It's a small, working web app: sign-in, team workspaces, API keys, a settings page, and a test suite. Every part of it follows the same handful of rules, so whatever the agent builds next follows them too.
+
+The rules are also written down, in a file called `AGENTS.md`. Codex, Cursor, and Copilot read that file automatically, and Claude Code picks it up through `CLAUDE.md`. The agent gets the rules in writing and working examples of each.
 
 ## The rules
 
-Most rules trace back to a specific bug.
+Each team's data stays separate. Every database query filters by workspace, and every feature needs a test proving that a user from another team can't see its data. This is the bug that's easiest to write and hardest to apologize for.
 
-Every query that touches customer data must filter by workspace, and every route needs a test in which a user from another workspace is refused. Pluck once shipped a lookup without that filter. Its tests passed because the test database held only one workspace. Leaking one customer's data to another is the bug that cannot be undone, so the test is compulsory.
+Tests come first, and they're fast. The whole suite runs in under a second, which is fast enough that an agent will actually run it after every change.
 
-Tests come first and run quickly. The whole suite finishes in under a second, which means an agent will actually run it.
+Colors, spacing, and fonts are defined in one file. Components refer to names like `--color-accent`, never to raw values, so a redesign is a one-file change. A copy guide does the same for wording, with examples of error messages and buttons written properly.
 
-Colors, spacing, and fonts are defined once, under names such as `--color-accent`, so a redesign means editing one file. A copy guide does the same for words. It lists banned phrases and gives examples of error messages written in the product's own vocabulary.
+Scope is limited. The agent builds only what it was asked to build. If it finishes early, it writes tests instead of adding features.
 
-The health check reports success only when both the website and the API are running. That rule dates from the night Pluck's database vanished while its health check said all was well.
+## Try it
 
-The last rule is about restraint. The agent should build only what it was asked to build, and spend any spare time writing tests.
+seriousvibes uses Next.js, Hono, and Postgres, with plain SQL and no ORM. It's free under the MIT license. To start a project:
 
-## Order matters
+```bash
+npx degit sptr11/seriousvibes myapp
+```
 
-The broader lesson from Pluck was that sequence matters more than polish. Marketing written before the product's main feature exists has to be rewritten. Screens built before the design system have to be redone. Support for multiple customers added after launch means changing every route.
-
-seriousvibes builds in a cheaper order and leaves out what can wait: marketing pages, billing, and admin dashboards. Those should come once there are users who need them.
-
-It uses Next.js, Hono, and Postgres, with plain SQL and about 260 lines of sign-in code you own outright. It is free under the MIT license. Start a project with `npx degit sptr11/seriousvibes myapp`.
-
-The code is on GitHub at [github.com/sptr11/seriousvibes](https://github.com/sptr11/seriousvibes). If your agent ships a bug these rules should have caught, open an issue there.
+The README walks through renaming it and making the rules your own. The code is on GitHub at [github.com/sptr11/seriousvibes](https://github.com/sptr11/seriousvibes). If your agent ships a bug these rules should have caught, open an issue there.

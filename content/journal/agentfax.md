@@ -1,39 +1,45 @@
 ---
-title: "AgentFax: The Fax Machine, Rebuilt for Agents"
+title: "AgentFax: Send Your Agent's Work to Someone Outside the Chat"
 date: 2026-10-17
 draft: true
-summary: "An AI agent finishes a report, but the person who needs it is outside the conversation. AgentFax turns the report into a link that both people and their assistants can read."
+summary: "When your AI agent produces something another person needs to read or answer, there's no clean way to get it to them. AgentFax turns it into a link that both they and their assistant can use."
 tags: ["ai", "open-source", "side-project"]
 ---
 
-An AI agent finishes a report, a proposal, or a list of questions for a supplier. The person who needs it is not in the conversation, does not use the same tools, and may have an assistant of their own.
+My AI agent often finishes work that someone else needs. A report for a client. A proposal that needs a yes or no. A list of questions for a supplier.
 
-[AgentFax](https://github.com/sptr11/agentfax) turns the work into a link. The recipient opens a clean page. Their assistant can open the same link and understand it. If the page asks questions, the assistant drafts the answers and the person sends them with one click.
+Getting it to that person is clumsy. I can paste it into an email, where the formatting breaks and the replies come back as loose paragraphs I have to match to questions. I can share a doc, which they have to read and answer by hand. And if they have an AI assistant of their own, which they increasingly do, it usually can't help, because it can't reliably read whatever I sent.
+
+[AgentFax](https://github.com/sptr11/agentfax) is my answer. It turns your agent's work into a link. The recipient opens a clean page. Their assistant can open the same link and understand it. If the page asks questions, their assistant drafts the answers, and they send them back with one click.
+
+## How it works
+
+You send a page with one command:
+
+```bash
+npx agentfax send report.html --to priya --ask "Approve the Q3 numbers?"
+# → https://fax.example.com/f/k3J9xQ   send this to Priya
+# → https://fax.example.com/i/Zp81wL   your inbox
+```
+
+Priya opens her link and reads the report. If she wants help, she pastes the link into whatever assistant she uses. At the bottom of every page is a short section written for AI assistants. It explains the questions and gives a template for the reply.
+
+The reply is itself a link: the same address, with the answers added after a `#`. Her assistant fills in the template and hands her the link. She opens it, sees the answers already filled in, and clicks Send.
+
+That design has a useful property. Browsers never send the part of a link after the `#` to the server, so nothing leaves until Priya clicks. Her assistant can draft every answer, but only she can send them.
 
 ## Why a fax
 
-The fax machine got one thing right: a document arrives, a person reads it, and an answer goes back. AgentFax keeps that and drops the rest.
+The fax got one thing right. A document arrives, a person reads it, and an answer goes back. AgentFax keeps that.
 
-Existing standards for AI agents solve different problems. MCP connects an agent to tools, and A2A connects one agent to another. Both need software on each end. AgentFax connects two people, whatever assistants they use. The recipient needs only a link.
+Existing agent standards solve a different problem. MCP connects an agent to tools, and A2A connects one agent to another. Both assume software on both ends. AgentFax connects two people, whatever assistants they happen to use. The recipient needs nothing but a link, and there are no accounts.
 
-## Replies are links
+## Try it
 
-The central design problem was letting an assistant write a reply without letting it send one.
+Start a fax server on your own machine with a public link:
 
-Every fax page ends with a short section addressed to AI assistants. It lists the questions and gives a template for the reply: the fax's own web address, with the answers added after a `#`. The assistant fills in the template and gives the link to its user. The user opens it, finds the answers already filled in, and clicks Send.
+```bash
+npx agentfax serve --tunnel
+```
 
-Browsers never send the part after the `#` to the server. So nothing leaves until a person clicks. The assistant can draft every answer but cannot submit any of them.
-
-Many faxes ask nothing. They are simply pages to read, with an optional "Got it" button that works like the old confirmation slip.
-
-## Testing with real assistants
-
-The wording of the section for assistants is fixed by the specification, word for word, because it was tested against real assistants. The tests turned up practical limits. Reply links shorter than about 1,700 characters worked in every assistant tried. Gemini opens links it writes as a Google search, so every fax also has a plain reply box.
-
-The sender is not fully trusted either. Their content runs in a sandbox that cannot reach the network, so it can display anything but send nothing. Phrases that could be used to fake the assistant section are rewritten before display.
-
-## Trying it
-
-AgentFax is a short open specification and a free server, published on npm. Run `npx agentfax serve --tunnel` to start a fax server on your own machine. Then `npx agentfax send report.html --to priya --ask "Approve the Q3 numbers?"` gives you one link to send to Priya and a private inbox link for yourself. There are no accounts. Each recipient gets a separate link, so you know who replied.
-
-[The specification](https://github.com/sptr11/agentfax/blob/main/SPEC.md) takes about five minutes to read. The code is on GitHub at [github.com/sptr11/agentfax](https://github.com/sptr11/agentfax), and comments on the spec are welcome there.
+AgentFax is free and open source. The [specification](https://github.com/sptr11/agentfax/blob/main/SPEC.md) takes about five minutes to read, so anyone can build a compatible server. The code is on GitHub at [github.com/sptr11/agentfax](https://github.com/sptr11/agentfax).

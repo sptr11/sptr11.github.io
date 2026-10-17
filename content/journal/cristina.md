@@ -1,35 +1,42 @@
 ---
-title: "Cristina: A Wiki for the Pages Your Agents Make"
+title: "Cristina: A Shared Home for the Web Pages Your AI Makes"
 date: 2026-10-17
 draft: true
-summary: "AI assistants now produce polished web pages: reports, prototypes, and dashboards. Most end up stranded in a chat window. Cristina gives them a link."
+summary: "AI assistants now produce reports, dashboards, and prototypes as web pages. There's no good place to put them where a team can see them. Cristina is that place."
 tags: ["product", "ai", "side-project"]
 ---
 
-Ask an AI assistant for a planning summary or a sales review and it will often produce a polished web page, complete with charts. Then the page sits in a chat window or a downloads folder. Sharing it means a screenshot, a PDF that loses the interactive parts, or a document that strips the formatting.
+AI assistants have quietly become very good at making web pages. Ask Claude to analyze a spreadsheet or sketch a feature and you often get back a polished HTML page with charts, tables, and working buttons.
 
-[Cristina](https://cristina.cc) is a team wiki for these pages. You post the HTML, get a link, and share it.
+Sharing that page with your team is surprisingly hard. Send the file and it lands in someone's downloads folder. Paste it into a doc or a wiki and the charts and scripts are stripped out. Take a screenshot and nobody can click anything. The best work your assistant produced ends up in one person's chat history.
+
+I built [Cristina](https://cristina.cc) to give those pages a home. It's a wiki for HTML: you post a page, get a permanent link, and your team can open it, comment on it, and find it later.
 
 ## How it works
 
-There are three ways in. You can paste the page, upload a file, or have an agent send it through the API. You land on the finished page with its link in the address bar. Colleagues open the link, comment, and see new pages in a shared feed.
+You can paste the HTML, upload a file, or have your agent post it directly:
 
-Agents that use MCP, a common standard for connecting AI tools, can save pages directly through a small add-on called `cristina-mcp`. Pages are sorted into color-coded folders. Anything left unsorted goes to an "Unclassified" folder rather than getting lost.
+```bash
+curl -X POST https://cristina.cc/api/artifacts \
+  -H "Authorization: Bearer <api-key>" \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Q3 planning", "html": "<html>...</html>"}'
+```
 
-## The security problem
+You get back a link. Teammates who open it see the page exactly as the assistant made it, scripts and all. New pages show up in a shared feed and can be sorted into folders. Teammates can pin comments to a specific chart or paragraph.
 
-Every page is arbitrary code, often including scripts, and it is displayed inside an app where colleagues are signed in. A malicious page could try to read their login cookies.
+If your assistant supports MCP, an add-on called `cristina-mcp` lets it save pages to the wiki without you copying anything.
 
-Cristina runs each page in a sandbox that permits scripts and nothing else. Charts and prototypes work, but the page cannot reach the surrounding app. One setting, `allow-same-origin`, would quietly undo that protection. It is a tempting fix when a page misbehaves, so the project's instructions to coding agents forbid it in bold.
+## Running untrusted pages safely
 
-Comments can be pinned to a particular chart or paragraph, and the pin stays with that element as the page scrolls.
+A wiki that runs arbitrary scripts is a security risk. A page could try to read the cookies of whoever opens it and take over their account.
 
-## Sharing
+Cristina displays each page in a sandboxed frame that lets scripts run but cuts them off from everything else. Charts animate and buttons work, but the page can't see the app around it, the viewer's login, or their stored data.
 
-The harder problem was sharing. A link pasted into Slack has to work for whoever clicks it.
+## Links that work for the whole team
 
-Each link carries the team's name, as in `cristina.cc/finch-labs/a/q3-planning`. A colleague who is signed in goes straight to the page. One who is not sees a sign-in screen bearing the team's name, then returns to the page. Someone with a company email address joins the team automatically, and anyone else is turned away. If a team renames itself, old links keep working.
+A link is only useful if it works for whoever clicks it. Each Cristina link includes the team's name, like `cristina.cc/finch-labs/a/q3-planning`. A teammate who's signed in goes straight to the page. One who isn't gets a sign-in screen for that team and then lands on the page. Colleagues with the same company email domain can join automatically.
 
-Cristina was built on [seriousvibes]({{< ref "seriousvibes" >}}). It was the first project to start with those rules rather than learn them the hard way. It is in early preview with a waitlist, and the first 25 pages are free.
+## Try it
 
-Cristina is live at [cristina.cc](https://cristina.cc).
+Cristina is live at [cristina.cc](https://cristina.cc). It's in early preview with a waitlist, and the first 25 pages are free.

@@ -1,37 +1,41 @@
 ---
-title: "Pluck: Forms Your Users' AI Can Fill"
+title: "Pluck: Forms That AI Assistants Can Fill In"
 date: 2026-10-17
 draft: true
-summary: "People tell their AI assistants their budgets, deadlines, and plans. Then a form asks them to type it all again. Pluck lets the assistant fill it in."
+summary: "Online forms are invisible to AI assistants, so people retype answers their assistant already knows. Pluck serves every form in a format agents can read and submit."
 tags: ["product", "ai", "side-project"]
 ---
 
-Anyone who uses an AI assistant has told it a great deal. It knows their budget, their deadlines, and the project they want help with. Yet when a vendor sends them an intake form, they open a browser and type the same facts in by hand.
+Online forms were designed for a person typing into a browser. That made sense until recently. Now many people have an AI assistant that already knows the answers: their company's details, their budget, their deadlines, the project they need help with.
 
-[Pluck](https://pluck.one) is a form builder designed around that waste. A Pluck form can be filled in by a person, by the person's assistant, or by both working together.
+But hand that assistant a Typeform or Google Forms link and it usually can't do anything with it. These forms are built in JavaScript, and the tools assistants use to read web pages generally don't run JavaScript. The assistant sees an empty page. So the person reads the questions and types out, by hand, facts their assistant could have supplied in seconds.
+
+I built [Pluck](https://pluck.one) to fix that. It's a form builder where every form can be read and filled in by an AI assistant as easily as by a person.
 
 ## How it works
 
-Each form has one web address. Open it in a browser and you see an ordinary form. Ask the same address for JSON, as an agent does, and you get the form as structured data: the fields, their types, the rules, and where to submit.
+Each Pluck form has one link. Open it in a browser and you get a normal form. Request the same link as JSON, which is what an agent does, and you get the form as structured data: each field, its type, whether it's required, and where to submit the answers.
 
-No plugin or software kit is needed. A recipient pastes the link into Claude or ChatGPT. The assistant reads the fields, fills in what it knows, asks about the rest, and submits. A form that takes three minutes to type is done in seconds.
+That means nothing needs installing on either side. The recipient pastes the link into Claude or ChatGPT. The assistant reads the questions, fills in what it knows, asks about what it doesn't, and submits.
 
-Creators work the same way. They describe the form to their own agent, which builds it through Pluck's API and returns a link. Later the agent can read the submissions and summarize them.
+Creating a form works the same way. You tell your own agent what you want to ask. It calls Pluck's API and hands you back a link. When responses come in, your agent can read them through the same API and summarize them.
+
+```bash
+curl -X POST https://pluck.one/api/forms \
+  -H "Authorization: Bearer pk_your_key" \
+  -H "Content-Type: application/json" \
+  -d '{"title": "Project requirements", "fields": [
+        {"name": "budget", "type": "select", "options": ["<$10k", "$10k-$50k", "$50k+"]},
+        {"name": "start_date", "type": "date"}
+      ]}'
+```
 
 ## Follow-up questions
 
-Pre-filling is the obvious feature. The more useful one is the follow-up question, which Pluck calls a probe.
+Making forms readable by agents fixes the retyping. It doesn't fix the other problem with forms, which is that the answers are thin. Ask "What blocked you this week?" and many people write "meetings".
 
-A creator can attach probes to any field. If someone answers "What blocked you this week?" with one word, the form asks "How many days did that cost you?" People see the probe appear as they type. Agents see it in the JSON and answer it in their draft. Most forms collect thin answers because nothing on the page asks for more. Probes do.
+So Pluck lets you attach follow-up questions, which it calls probes, to any field. If the answer is short, the form asks the follow-up: "How many days did that cost you?" A person sees it appear as they type. An assistant sees it in the JSON and answers it in its draft. You write the follow-ups once, and every respondent gets them.
 
-## What went wrong
+## Try it
 
-Pluck was built in the wrong order, and the order cost more than any single bug.
-
-A polished design system broke the live form renderer. Forty pages describing use cases were written before probes existed, and all had to be redone once they did. An admin dashboard was built when the product had four users. Worst of all, the core loop was broken for weeks: agents were showing people empty forms. Users reported it in week three. It could have been caught in week one.
-
-Then the hosting provider's free database plan expired, and the production database was deleted. There was no warning and no backup. The site's health check reported "ok" throughout, because the code that tested the database connection ignored its own errors. Fixing that took one line. Not having it cost every form and every response.
-
-Those lessons became a starter kit, [seriousvibes]({{< ref "seriousvibes" >}}), which is the subject of the next post.
-
-Pluck is live at [pluck.one](https://pluck.one).
+Pluck is live at [pluck.one](https://pluck.one). Sign up, and the dashboard gives you an API key and setup instructions to paste into your agent.
