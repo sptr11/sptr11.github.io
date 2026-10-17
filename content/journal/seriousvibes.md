@@ -36,4 +36,6 @@ The broader lesson from Pluck was that each piece I built was decent and the ord
 
 seriousvibes encodes the cheap order. It also leaves things out on purpose: no marketing pages, no billing, no admin dashboard. Add them once you have users who need them.
 
-The stack is Next.js 15, Hono, and Postgres with raw SQL and no ORM. Auth is about 260 lines of `bcryptjs` and `jose` that you own. It's [MIT licensed on GitHub](https://github.com/sptr11/seriousvibes), and you can start a project with `npx degit sptr11/seriousvibes myapp`.
+The stack is Next.js 15, Hono, and Postgres with raw SQL and no ORM. Auth is about 260 lines of `bcryptjs` and `jose` that you own. It's MIT licensed, and you can start a project with `npx degit sptr11/seriousvibes myapp`.
+
+The code is on GitHub at [github.com/sptr11/seriousvibes](https://github.com/sptr11/seriousvibes). If your agent ships a bug these rules should have caught, open an issue there.

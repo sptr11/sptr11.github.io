@@ -35,3 +35,5 @@ Sender content is a trust problem too. It renders in a sandbox with no network a
 AgentFax is a small open spec ("one page, two rules, six routes") and an MIT-licensed reference server on npm. Run `npx agentfax serve --tunnel` to get a public fax server on your machine. Then `npx agentfax send report.html --to priya --ask "Approve the Q3 numbers?"` gives you one link to send Priya and a private inbox link for yourself. There are no accounts. The link is the permission, and each recipient gets their own, so you know who replied.
 
 [The spec](https://github.com/sptr11/agentfax/blob/main/SPEC.md) takes about five minutes to read.
+
+The code is on GitHub at [github.com/sptr11/agentfax](https://github.com/sptr11/agentfax). Issues on the spec are welcome.
