@@ -2,38 +2,36 @@
 title: "Pluck: Forms Your Users' AI Can Fill"
 date: 2026-10-17
 draft: true
-summary: "Your users have already told their AI their budget, their timeline, and what they need built. Then you send them a form and make them type it all again."
+summary: "People tell their AI assistants their budgets, deadlines, and plans. Then a form asks them to type it all again. Pluck lets the assistant fill it in."
 tags: ["product", "ai", "side-project"]
 ---
 
-Your users have already told their AI almost everything you're about to ask them. Their budget, their timeline, the project they need help with, the dates they're free. Then you send a Typeform link, and they open a browser and type it all out by hand.
+Anyone who uses an AI assistant has told it a great deal. It knows their budget, their deadlines, and the project they want help with. Yet when a vendor sends them an intake form, they open a browser and type the same facts in by hand.
 
-That gap is what [Pluck](https://pluck.one) is built around. It's a form builder for a world where the person filling in the form usually has an assistant open in another tab.
+[Pluck](https://pluck.one) is a form builder designed around that waste. A Pluck form can be filled in by a person, by the person's assistant, or by both working together.
 
-## One URL, two readers
+## How it works
 
-Every Pluck form lives at a single URL. A browser that opens it gets a normal HTML form. An agent that asks for JSON gets the same form as structured data: field names, types, rules, and the endpoint to submit to.
+Each form has one web address. Open it in a browser and you see an ordinary form. Ask the same address for JSON, as an agent does, and you get the form as structured data: the fields, their types, the rules, and where to submit.
 
-That's the whole integration. There's no SDK and no plugin. A recipient pastes the link into Claude or ChatGPT, the agent reads the fields, fills in what it already knows, asks for what it doesn't, and hands the answers back. A form that takes three minutes to type takes a few seconds to review.
+No plugin or software kit is needed. A recipient pastes the link into Claude or ChatGPT. The assistant reads the fields, fills in what it knows, asks about the rest, and returns the answers for the person to check. A form that takes three minutes to type takes seconds to review.
 
-The creator side works the same way. You tell your own agent what you need, it calls the Pluck API with an API key, and you get back a link. Your agent can read submissions through the same API later and summarize them.
+Creators work the same way. They describe the form to their own agent, which builds it through Pluck's API and returns a link. Later the agent can read the submissions and summarize them.
 
-## Probes
+## Follow-up questions
 
-Pre-filling turned out to be the less interesting half. The feature that changed what the product is for is probes.
+Pre-filling is the obvious feature. The more useful one is the follow-up question, which Pluck calls a probe.
 
-A probe is a follow-up question attached to a field. When someone gives a one-word answer to "What blocked you this week?", the form asks "How many days did that block you?" You write the probes once, when you create the form. A person sees them appear as they type. An agent sees them in the JSON and covers them in its draft.
+A creator can attach probes to any field. If someone answers "What blocked you this week?" with one word, the form asks "How many days did that cost you?" People see the probe appear as they type. Agents see it in the JSON and answer it in their draft. Most forms collect thin answers because nothing on the page asks for more. Probes do.
 
-That turns a form into something closer to an interview. Most forms collect thin answers because nothing on the page pushes back. Probes push back, politely, for every respondent.
+## What went wrong
 
-## What I'd do differently
+Pluck was built in the wrong order, and the order cost more than any single bug.
 
-I built Pluck in the wrong order, and the order cost more than any single bug.
+A polished design system broke the live form renderer. Forty pages describing use cases were written before probes existed, and all had to be redone once they did. An admin dashboard was built when the product had four users. Worst of all, the core loop was broken for weeks: agents were showing people empty forms. Users reported it in week three. A simple end-to-end test would have caught it in week one.
 
-I shipped a polished design system, then found it broke the live form renderer. I wrote 40 use-case pages before probes existed, and every one of them had to be rewritten once they did. I built usage tracking and a tabbed admin dashboard when the product had four users. The worst one: early users told me agents were showing them empty forms. The core loop was broken, and I found out in week three when I could have found out in week one.
+Then the hosting provider's free database plan expired, and the production database was deleted. There was no warning and no backup. The site's health check reported "ok" throughout, because the code that tested the database connection ignored its own errors. Fixing that took one line. Not having it cost every form and every response.
 
-Then Render's free Postgres tier expired and deleted the production database. No warning, no export. The health check kept reporting "ok" the whole time because the startup database check swallowed its own error. The fix was one line. Learning that I needed it cost every form and submission in the system.
-
-Each of those mistakes went into a starter I now use for every new project. That's the next post.
+Those lessons became a starter kit, [seriousvibes]({{< ref "seriousvibes" >}}), which is the subject of the next post.
 
 Pluck is live at [pluck.one](https://pluck.one).

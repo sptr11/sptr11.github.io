@@ -1,35 +1,35 @@
 ---
-title: "Cristina: A Wiki for the HTML Your Agents Make"
+title: "Cristina: A Wiki for the Pages Your Agents Make"
 date: 2026-10-17
 draft: true
-summary: "Agents are good at producing HTML. Reports, prototypes, dashboards. Then the file sits in a chat window or a Downloads folder and nobody on the team ever sees it."
+summary: "AI assistants now produce polished web pages: reports, prototypes, and dashboards. Most end up stranded in a chat window. Cristina gives them a link."
 tags: ["product", "ai", "side-project"]
 ---
 
-Agents have become very good at producing HTML. Ask Claude for a planning brainstorm or a metrics review and you often get a polished page with charts. Then it sits in a chat window or a Downloads folder. To share it, you screenshot it, or export a PDF that loses the interactivity, or paste it into a doc that strips it.
+Ask an AI assistant for a planning summary or a sales review and it will often produce a polished web page, complete with charts. Then the page sits in a chat window or a downloads folder. Sharing it means a screenshot, a PDF that loses the interactive parts, or a document that strips the formatting.
 
-[Cristina](https://cristina.cc) gives those pages a permanent home. Post HTML, get a URL, share it with your team.
+[Cristina](https://cristina.cc) is a team wiki for these pages. You post the HTML, get a link, and share it.
 
-## One request, one link
+## How it works
 
-The loop is three steps. Paste HTML from your assistant, upload a file, or have your agent POST it to `/api/artifacts` with an API key. You land on the rendered page, and the link is already in the address bar. Teammates open it, leave comments, and see new artifacts in their feed.
+There are three ways in. You can paste the page, upload a file, or have an agent send it through the API. You land on the finished page with its link in the address bar. Colleagues open the link, comment, and see new pages in a shared feed.
 
-For agents that speak MCP, there's a small server, `cristina-mcp`, so Claude can save an artifact without anyone copying a file anywhere. Pages go into color-coded folders. Anything you don't file lands in an Unclassified folder so it doesn't disappear.
+Agents that use MCP, a common standard for connecting AI tools, can save pages directly through a small add-on called `cristina-mcp`. Pages are sorted into color-coded folders. Anything left unsorted goes to an "Unclassified" folder rather than getting lost.
 
-## Untrusted HTML, rendered safely
+## The security problem
 
-The interesting engineering problem is that every artifact is arbitrary HTML, often with scripts, and you're rendering it inside an app where your teammates are signed in.
+Every page is arbitrary code, often including scripts, and it is displayed inside an app where colleagues are signed in. A malicious page could try to read their login cookies.
 
-Each artifact runs in an iframe with `sandbox="allow-scripts"` and nothing else. Scripts run, so charts and interactive prototypes work. The page can't read the parent's cookies, DOM, or storage. The tempting one-word fix for a misbehaving artifact is to add `allow-same-origin`, and that one word would defeat the sandbox entirely. The project instructions say so in bold, because a coding agent will reach for it.
+Cristina runs each page in a sandbox that permits scripts and nothing else. Charts and prototypes work, but the page cannot reach the surrounding app. One setting, `allow-same-origin`, would quietly undo that protection. It is a tempting fix when a page misbehaves, so the project's instructions to coding agents forbid it in bold.
 
-Comments sit on top of all that. You can pin a comment to a specific element inside the artifact, and the pin follows the content as you scroll rather than staying fixed to the viewport.
+Comments can be pinned to a particular chart or paragraph, and the pin stays with that element as the page scrolls.
 
-## Links that know which team they belong to
+## Sharing
 
-Sharing turned out to be the harder product problem. A link pasted into Slack has to work for whoever clicks it.
+The harder problem was sharing. A link pasted into Slack has to work for whoever clicks it.
 
-Shared links carry the team's handle: `cristina.cc/finch-labs/a/q3-planning-brainstorm`. A teammate who's signed in lands straight on the artifact, in that team's context. A teammate who isn't sees a sign-in page branded with the team's name, then goes back to the artifact afterward. Someone with a matching work email domain joins automatically. Everyone else gets a clear "not accessible" page. Owners can rename a handle, and the old one keeps resolving so links already in Slack and email don't break.
+Each link carries the team's name, as in `cristina.cc/finch-labs/a/q3-planning`. A colleague who is signed in goes straight to the page. One who is not sees a sign-in screen bearing the team's name, then returns to the page. Someone with a company email address joins the team automatically, and anyone else is turned away. If a team renames itself, old links keep working.
 
-Cristina was bootstrapped from [seriousvibes]({{< ref "seriousvibes" >}}), and it's the first project that started with those rules instead of discovering them. It's in early preview with a waitlist, and the first 25 artifacts are free.
+Cristina was built on [seriousvibes]({{< ref "seriousvibes" >}}). It was the first project to start with those rules rather than learn them the hard way. It is in early preview with a waitlist, and the first 25 pages are free.
 
 Cristina is live at [cristina.cc](https://cristina.cc).
