@@ -14,7 +14,7 @@ Anyone who uses an AI assistant has told it a great deal. It knows their budget,
 
 Each form has one web address. Open it in a browser and you see an ordinary form. Ask the same address for JSON, as an agent does, and you get the form as structured data: the fields, their types, the rules, and where to submit.
 
-No plugin or software kit is needed. A recipient pastes the link into Claude or ChatGPT. The assistant reads the fields, fills in what it knows, asks about the rest, and returns the answers for the person to check. A form that takes three minutes to type takes seconds to review.
+No plugin or software kit is needed. A recipient pastes the link into Claude or ChatGPT. The assistant reads the fields, fills in what it knows, asks about the rest, and submits. A form that takes three minutes to type is done in seconds.
 
 Creators work the same way. They describe the form to their own agent, which builds it through Pluck's API and returns a link. Later the agent can read the submissions and summarize them.
 
@@ -28,7 +28,7 @@ A creator can attach probes to any field. If someone answers "What blocked you t
 
 Pluck was built in the wrong order, and the order cost more than any single bug.
 
-A polished design system broke the live form renderer. Forty pages describing use cases were written before probes existed, and all had to be redone once they did. An admin dashboard was built when the product had four users. Worst of all, the core loop was broken for weeks: agents were showing people empty forms. Users reported it in week three. A simple end-to-end test would have caught it in week one.
+A polished design system broke the live form renderer. Forty pages describing use cases were written before probes existed, and all had to be redone once they did. An admin dashboard was built when the product had four users. Worst of all, the core loop was broken for weeks: agents were showing people empty forms. Users reported it in week three. It could have been caught in week one.
 
 Then the hosting provider's free database plan expired, and the production database was deleted. There was no warning and no backup. The site's health check reported "ok" throughout, because the code that tested the database connection ignored its own errors. Fixing that took one line. Not having it cost every form and every response.
 
