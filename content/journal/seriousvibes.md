@@ -10,6 +10,38 @@ Coding agents are fast at producing an app and bad at keeping it consistent. Ask
 
 The reason is that agents learn from the code around them. When an agent adds a feature, it looks at what's already in the project and does something similar. In a fresh project there's nothing to look at, so it improvises, and it improvises differently each time.
 
+<div style="max-width: 520px; margin: 2em auto; font-family: 'Inter', -apple-system, sans-serif;">
+<svg viewBox="0 0 520 190" xmlns="http://www.w3.org/2000/svg" style="width: 100%;" role="img" aria-label="Left: an empty project, where ten features come out ten different ways. Right: a starter with patterns, where ten features come out the same way.">
+  <text x="135" y="22" text-anchor="middle" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73" letter-spacing="0.1em">EMPTY PROJECT</text>
+  <text x="385" y="22" text-anchor="middle" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73" letter-spacing="0.1em">PATTERNS TO COPY</text>
+  <rect x="40" y="40" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="82" y="40" width="32" height="32" rx="16" fill="#3B82F6"/>
+  <rect x="124" y="40" width="32" height="32" rx="0" fill="none" stroke="#2563EB" stroke-width="2"/>
+  <rect x="166" y="40" width="32" height="32" rx="3" fill="#A8A8B2"/>
+  <rect x="208" y="40" width="32" height="32" rx="8" fill="#60A5FA" transform="rotate(10 224 56)"/>
+  <rect x="40" y="82" width="32" height="32" rx="3" fill="none" stroke="#6E6E73" stroke-dasharray="4 3" stroke-width="2"/>
+  <rect x="82" y="82" width="32" height="32" rx="0" fill="#1D4ED8"/>
+  <rect x="124" y="82" width="32" height="32" rx="3" fill="#D4D4DA"/>
+  <rect x="166" y="82" width="32" height="32" rx="16" fill="none" stroke="#3B82F6" stroke-width="3"/>
+  <rect x="208" y="82" width="32" height="32" rx="5" fill="#93C5FD"/>
+  <rect x="290" y="40" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="332" y="40" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="374" y="40" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="416" y="40" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="458" y="40" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="290" y="82" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="332" y="82" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="374" y="82" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="416" y="82" width="32" height="32" rx="3" fill="#2563EB"/>
+  <rect x="458" y="82" width="32" height="32" rx="3" fill="#2563EB"/>
+  <line x1="260" y1="36" x2="260" y2="150" stroke="#E8E8ED" stroke-width="1.5"/>
+  <text x="135" y="146" text-anchor="middle" font-size="11" fill="#4A4A4F">10 features, 10 ways</text>
+  <text x="385" y="146" text-anchor="middle" font-size="11" fill="#4A4A4F">10 features, 1 way</text>
+  <text x="135" y="170" text-anchor="middle" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">the agent improvises</text>
+  <text x="385" y="170" text-anchor="middle" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">the agent copies</text>
+</svg>
+</div>
+
 [seriousvibes](https://sptr11.github.io/seriousvibes/) is a starter kit that gives the agent something good to copy from the first prompt.
 
 ## What's in it
