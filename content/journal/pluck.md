@@ -1,7 +1,7 @@
 ---
 title: "Pluck: Forms That AI Assistants Can Fill In"
 date: 2026-10-17
-draft: true
+draft: false
 summary: "Online forms are invisible to AI assistants, so people retype answers their assistant already knows. Pluck serves every form in a format agents can read and submit."
 tags: ["product", "ai", "side-project"]
 ---

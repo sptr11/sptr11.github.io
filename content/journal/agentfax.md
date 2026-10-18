@@ -1,7 +1,7 @@
 ---
 title: "AgentFax: Send Your Agent's Work to Someone Outside the Chat"
 date: 2026-10-17
-draft: true
+draft: false
 summary: "When your AI agent produces something another person needs to read or answer, there's no clean way to get it to them. AgentFax turns it into a link that both they and their assistant can use."
 tags: ["ai", "open-source", "side-project"]
 ---
@@ -58,11 +58,47 @@ That design has a useful property. Browsers never send the part of a link after 
 </svg>
 </div>
 
+## A person and an agent, on both ends
+
+The way we write and read has changed. More of what I send starts as a draft from my agent. More of what I receive gets read first by the recipient's assistant, which summarizes it, answers what it can, and flags the rest for them. On each end of most exchanges now sits a pair: a person and their agent.
+
+No protocol was built for that pair. Email and shared docs assume a person on each end, so the agent has to scrape text written for human eyes. MCP connects an agent to tools, and A2A connects one agent to another, so the person drops out. Each one serves half of the pair.
+
+<div style="max-width: 520px; margin: 2em auto; font-family: 'Inter', -apple-system, sans-serif;">
+<svg viewBox="0 0 520 230" xmlns="http://www.w3.org/2000/svg" style="width: 100%;" role="img" aria-label="Who each protocol connects. Email and docs connect two people, so agents have to scrape them. MCP connects an agent to tools and A2A connects two agents, with no person in the loop. AgentFax connects a person and their agent to another person and their agent.">
+  <text x="260" y="18" text-anchor="middle" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73" letter-spacing="0.1em">WHO EACH PROTOCOL CONNECTS</text>
+  <circle cx="60" cy="56" r="8" fill="#4A4A4F"/>
+  <line x1="86" y1="56" x2="164" y2="56" stroke="#C0C0C8" stroke-width="1.5"/>
+  <circle cx="190" cy="56" r="8" fill="#4A4A4F"/>
+  <text x="236" y="60" font-size="11" font-weight="600" fill="#111">Email, docs</text>
+  <text x="330" y="60" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">the agent has to scrape it</text>
+  <rect x="52" y="88" width="16" height="16" rx="3" fill="#2563EB"/>
+  <line x1="86" y1="96" x2="164" y2="96" stroke="#C0C0C8" stroke-width="1.5"/>
+  <rect x="182" y="88" width="16" height="16" rx="1" fill="none" stroke="#6E6E73" stroke-width="1.5"/>
+  <text x="236" y="100" font-size="11" font-weight="600" fill="#111">MCP</text>
+  <text x="330" y="100" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">no person in the loop</text>
+  <rect x="52" y="128" width="16" height="16" rx="3" fill="#2563EB"/>
+  <line x1="86" y1="136" x2="164" y2="136" stroke="#C0C0C8" stroke-width="1.5"/>
+  <rect x="182" y="128" width="16" height="16" rx="3" fill="#2563EB"/>
+  <text x="236" y="140" font-size="11" font-weight="600" fill="#111">A2A</text>
+  <text x="330" y="140" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">no person in the loop</text>
+  <rect x="12" y="158" width="496" height="36" rx="3" fill="#EEF3FE"/>
+  <circle cx="50" cy="176" r="8" fill="#4A4A4F"/><rect x="62" y="168" width="16" height="16" rx="3" fill="#2563EB"/>
+  <line x1="86" y1="176" x2="164" y2="176" stroke="#2563EB" stroke-width="1.5"/>
+  <circle cx="180" cy="176" r="8" fill="#4A4A4F"/><rect x="192" y="168" width="16" height="16" rx="3" fill="#2563EB"/>
+  <text x="236" y="180" font-size="11" font-weight="600" fill="#111">AgentFax</text>
+  <text x="330" y="180" font-size="10" font-family="'JetBrains Mono', monospace" fill="#2563EB">built for the pair</text>
+  <circle cx="150" cy="214" r="8" fill="#4A4A4F"/><text x="162" y="218" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">person</text>
+  <rect x="232" y="206" width="16" height="16" rx="3" fill="#2563EB"/><text x="252" y="218" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">agent</text>
+  <rect x="316" y="206" width="16" height="16" rx="1" fill="none" stroke="#6E6E73" stroke-width="1.5"/><text x="336" y="218" font-size="10" font-family="'JetBrains Mono', monospace" fill="#6E6E73">tool</text>
+</svg>
+</div>
+
+AgentFax is built for both halves. Every page carries a part for the person and a part for their assistant. The assistant does the reading and drafting. The person keeps the decision, because nothing goes back until they click Send.
+
 ## Why a fax
 
-The fax got one thing right. A document arrives, a person reads it, and an answer goes back. AgentFax keeps that.
-
-Existing agent standards solve a different problem. MCP connects an agent to tools, and A2A connects one agent to another. Both assume software on both ends. AgentFax connects two people, whatever assistants they happen to use. The recipient needs nothing but a link, and there are no accounts.
+The fax got one thing right. A document arrives, a person reads it, and an answer goes back. AgentFax keeps that, whatever assistants the two people happen to use. The recipient needs nothing but a link, and there are no accounts.
 
 ## Try it
 

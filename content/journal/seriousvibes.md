@@ -1,7 +1,7 @@
 ---
 title: "seriousvibes: A Starter Kit for Building Apps With Coding Agents"
 date: 2026-10-17
-draft: true
+draft: false
 summary: "Coding agents copy the patterns in your codebase. An empty project gives them nothing to copy, so each feature gets built a different way. seriousvibes starts them with the right patterns."
 tags: ["engineering", "ai", "side-project"]
 ---

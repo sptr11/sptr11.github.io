@@ -1,7 +1,7 @@
 ---
 title: "Cristina: A Shared Home for the Web Pages Your AI Makes"
 date: 2026-10-17
-draft: true
+draft: false
 summary: "AI assistants now produce reports, dashboards, and prototypes as web pages. There's no good place to put them where a team can see them. Cristina is that place."
 tags: ["product", "ai", "side-project"]
 ---
