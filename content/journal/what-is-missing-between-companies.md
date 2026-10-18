@@ -1,8 +1,8 @@
 ---
-title: "Agents Can Work Across Companies. Nobody Can Prove What Was Approved."
+title: "What's Missing When Agents Work Across Companies"
 date: 2026-10-18
 draft: false
-summary: "Inside a company, agents now get logins, tool access, and approval steps. Between companies, the work still runs through people, one side writes all the rules, and outside of payments there's no record of who approved what."
+summary: "Inside a company, agents now get logins, tool access, and approval steps. Between companies, the work still runs through people, one side sets the limits, and only payments have a standard record of who approved what."
 tags: ["ai", "agents", "research"]
 ---
 
@@ -24,13 +24,13 @@ I catalogued 25 public deployments where agent work crosses a company line. Only
 
 Everything with real volume falls into three patterns. One company's agent deals with another company's people, as when Walmart's negotiation agent bargains with supplier reps, or a freight broker's agent books carriers by email and phone. An agent pays a posted price, mostly developer tools paying per API call. Or agents draft and people send. That last one is plausibly the biggest of the three, and nobody measures it.
 
-The protocol built for agent-to-agent work, A2A, has more than 150 supporting organizations and no named deployment between two companies. The plumbing exists. The traffic is going through people.
+The protocol built for agent-to-agent work, A2A, has more than 150 supporting organizations and no named deployment between two companies. The protocols exist, but the traffic still goes through people.
 
 ## One side writes the rules
 
 Every autonomous exchange I found runs inside limits that one party set alone. Walmart sets the ceiling, and the supplier's rep accepts or declines. [project44's freight agent](https://www.ajot.com/news/project44-launches-ai-freight-procurement-agent) renews contracts "within approved limits" and sends anything new to a person. Chain's booking agent takes a start, target, and maximum rate from the broker's system and escalates when a carrier asks for more.
 
-So approval has moved from each message to the envelope as a whole, which is what makes these agents fast. But only the buyer wrote the envelope. None of the 25 deployments has two companies' agents comparing their limits with each other. That's fine while the other side is a person. It breaks the moment both sides send agents.
+So approval has moved from each message to the envelope as a whole, which is what makes these agents fast. But only the buyer wrote the envelope. None of the 25 deployments has two companies' agents comparing their limits with each other. That works while the other side is a person. Once both sides use agents, someone has to reconcile two sets of limits, and nothing does that today.
 
 ## What's missing
 
