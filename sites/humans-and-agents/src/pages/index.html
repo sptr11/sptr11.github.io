@@ -19,14 +19,14 @@ description: A field guide to how people and AI agents exchange messages within 
 
   <p><strong>Trust is being built in email's order, only faster, and from the receiving end.</strong> Email waited 24 to 33 years for sender authentication. Agents reached the same stage in about two. As with email, the receivers moved first: Cloudflare, Akamai, and AWS verify agent signatures in production, while the IETF's core document has been a working-group draft only since September 2026.</p>
 
-  <p><strong>Consent between strangers exists in one place, and it is payments.</strong> Only AP2 and Mastercard's Verifiable Intent record, in a form a stranger can check, what a named person authorized. They work because a card issuer vouches for the person. No standard can withdraw a long-lived agent delegation before it expires. Acquirers have paid about $41B for identity and data-security companies on the strength of machine and agent identities, yet no company reports material revenue from agents.</p>
+  <p><strong>Consent between strangers exists in one place, and it is payments.</strong> Only AP2 and Mastercard's Verifiable Intent record, in a form a stranger can check, what a named person authorized. They work because a card issuer vouches for the person. No standard can withdraw a long-lived agent delegation before it expires. Acquirers have paid or agreed to pay about $41B for identity and data-security companies on the strength of machine and agent identities, yet no company reports material revenue from agents.</p>
 </div>
 
 <div class="wide">
   <figure>
     <p class="fig-title">Twelve ways a message can travel</p>
     <div class="col" style="margin:0 0 1.25rem;max-width:var(--measure)">
-      <p>Every exchange has a mode and a scope. The mode is who composes and who sends on each side. The scope is how many trust domains the message crosses. The line that matters is not human versus machine. It is whether a party can bind the person or company it acts for.</p>
+      <p>Every exchange has a mode and a scope. The mode is who composes and who sends on each side. The scope is how many trust domains the message crosses. The line that matters is whether a party can bind the person or company it acts for.</p>
       <p class="legend"><span class="g g-p"></span> person &nbsp;&nbsp; <span class="g g-a"></span> agent &nbsp;&nbsp; <span class="g g-pa"></span> person working through an agent</p>
     </div>
     <div class="grid-wrap">
@@ -37,24 +37,24 @@ description: A field guide to how people and AI agents exchange messages within 
         <div class="hd" role="columnheader">Across companies</div>
 
         <div class="rowhd" role="rowheader"><span class="g g-p"></span> ↔ <span class="g g-p"></span><br>Person to person</div>
-        <div class="cell m4"><b>Messaging</b><span>Email, phone, and consumer chat. The EU is forcing WhatsApp to interoperate.</span></div>
-        <div class="cell m4"><b>Workplace chat</b><span>Slack and Teams, under one identity provider and one policy.</span></div>
-        <div class="cell m4"><b>Email and shared channels</b><span>About 362B emails a day need no setup. Shared channels need both sides to opt in.</span></div>
+        <div data-scope="Direct" class="cell m4"><b>Messaging</b><span>Email, phone, and consumer chat. The EU is forcing WhatsApp to interoperate.</span></div>
+        <div data-scope="Within one company" class="cell m4"><b>Workplace chat</b><span>Slack and Teams, under one identity provider and one policy.</span></div>
+        <div data-scope="Across companies" class="cell m4"><b>Email and shared channels</b><span>About 362B emails a day need no setup. Shared channels need both sides to opt in.</span></div>
 
         <div class="rowhd" role="rowheader"><span class="g g-p"></span> ↔ <span class="g g-a"></span><br>Person and agent</div>
-        <div class="cell m4"><b>Consumer assistants</b><span>900M+ weekly ChatGPT users (Feb 2026).</span></div>
-        <div class="cell m3"><b>Workplace copilots</b><span>62% of large firms experimenting, 23% scaling (mid-2025).</span></div>
-        <div class="cell m3"><b>Someone else's agent</b><span>Where cross-company agents actually work. The only cell disclosure law covers.</span></div>
+        <div data-scope="Direct" class="cell m4"><b>Consumer assistants</b><span>900M+ weekly ChatGPT users (Feb 2026).</span></div>
+        <div data-scope="Within one company" class="cell m3"><b>Workplace copilots</b><span>62% of large firms experimenting, 23% scaling (mid-2025).</span></div>
+        <div data-scope="Across companies" class="cell m3"><b>Someone else's agent</b><span>Where cross-company agents actually work. The only cell disclosure law covers.</span></div>
 
         <div class="rowhd" role="rowheader"><span class="g g-a"></span> ↔ <span class="g g-a"></span><br>Agent to agent</div>
-        <div class="cell m1"><b>Personal agent pairs</b><span>No shared protocol and little evidence.</span></div>
-        <div class="cell m2"><b>Multi-agent systems</b><span>A2A and MCP inside one trust domain.</span></div>
-        <div class="cell m1"><b>Only against posted prices</b><span>Paid APIs, card caps, EDI rules. Two LLM-to-LLM cases, neither binding.</span></div>
+        <div data-scope="Direct" class="cell m1"><b>Personal agent pairs</b><span>No shared protocol and little evidence.</span></div>
+        <div data-scope="Within one company" class="cell m2"><b>Multi-agent systems</b><span>A2A and MCP inside one trust domain.</span></div>
+        <div data-scope="Across companies" class="cell m1"><b>Only against posted prices</b><span>Paid APIs, card caps, EDI rules. Two LLM-to-LLM cases, neither binding.</span></div>
 
         <div class="rowhd" role="rowheader"><span class="g g-pa"></span> ↔ <span class="g g-pa"></span><br>Both sides drafting</div>
-        <div class="cell m1"><b>Agent-drafted replies</b><span>The assistant drafts; the person sends.</span></div>
-        <div class="cell m2"><b>Drafts inside the tenant</b><span>Copilot drafting, with approvals in workflow.</span></div>
-        <div class="cell m1 focus"><b>Drafted on both ends</b><span>Plausibly the largest cell, and unmeasured. It runs over email and links.</span></div>
+        <div data-scope="Direct" class="cell m1"><b>Agent-drafted replies</b><span>The assistant drafts; the person sends.</span></div>
+        <div data-scope="Within one company" class="cell m2"><b>Drafts inside the tenant</b><span>Copilot drafting, with approvals in workflow.</span></div>
+        <div data-scope="Across companies" class="cell m1 focus"><b>Drafted on both ends</b><span>Plausibly the largest cell, and unmeasured. It runs over email and links.</span></div>
       </div>
     </div>
     <div class="key"><span><i class="m4"></i>Mature</span><span><i class="m3"></i>Scaling</span><span><i class="m2"></i>Emerging</span><span><i></i>Thin evidence</span><span><i class="focus"></i>Largest unknown</span></div>
@@ -78,7 +78,7 @@ description: A field guide to how people and AI agents exchange messages within 
 <div class="col">
   <div class="chapters">
     <a href="{{root}}protocols/"><b>Protocols</b><span>The stack layer by layer, and how 13 standards handle delegation and consent.</span></a>
-    <a href="{{root}}history/"><b>History</b><span>What email, chat, the web, EDI, and 1990s agent languages predict.</span></a>
+    <a href="{{root}}history/"><b>History</b><span>What email, chat, the web, EDI, and 1990s agent languages predict, plus two years of developments, dated.</span></a>
     <a href="{{root}}actors/"><b>Actors</b><span>Who wants what, where the fights are, and where the money has gone.</span></a>
     <a href="{{root}}missing/"><b>What's missing</b><span>Six gaps in shipped standards and products, and who might close them.</span></a>
     <a href="{{root}}method/"><b>Method</b><span>Definitions, hypotheses and their status, the open research, and the limits of this work.</span></a>

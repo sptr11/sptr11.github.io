@@ -245,6 +245,15 @@ figcaption { font-size: 0.82rem; line-height: 1.5; color: var(--muted); margin-t
 .key { display: flex; flex-wrap: wrap; gap: 0.4rem 1.2rem; margin-top: 0.9rem; font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
 .key i { display: inline-block; width: 0.85rem; height: 0.85rem; border-radius: 3px; vertical-align: -0.12em; margin-right: 0.35rem; border: 1px solid var(--rule); }
 
+@media (max-width: 44rem) {
+  .grid { grid-template-columns: 1fr; min-width: 0; gap: 6px; }
+  .grid .hd { display: none; }
+  .grid .rowhd { padding: 1.1rem 0 0.2rem; }
+  .grid .rowhd br { display: none; }
+  .grid .rowhd .g:last-of-type { margin-right: 0.6em; }
+  .cell::before { content: attr(data-scope); display: block; font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+}
+
 /* ---------- the stack (protocols) ---------- */
 
 .stack { display: flex; flex-direction: column; gap: 8px; }

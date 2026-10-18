@@ -134,7 +134,7 @@ def render(slug, meta, body, pages):
 {body.strip()}
 <nav class="pager" aria-label="Reading order">{''.join(pager)}</nav>
 <footer class="colophon">
-  <p>{AS_OF}. Written by <a href="https://sptr11.github.io/">Sumit</a>. Every figure links to its source; company-reported and second-hand figures are marked. Full list on the <a href="{root}references/">references</a> page.</p>
+  <p>{AS_OF}. Written by <a href="https://sptr11.github.io/">Sumit</a>. Figures link to their sources where a public source exists; company-reported and second-hand figures are marked. Full list on the <a href="{root}references/">references</a> page.</p>
 </footer>
 </main>
 </body>

@@ -61,9 +61,54 @@
 </div>
 
 <div class="col">
+  <h2>Two years, newest first</h2>
+  <p>The agent row of that figure filled in between November 2024 and October 2026. Each event below is sourced on the page that discusses it.</p>
+</div>
+<div class="wide">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Date</th><th>Layer</th><th>Event</th></tr></thead>
+      <tbody>
+        <tr><td>15 Oct 2026</td><td>Identity</td><td>Proofpoint agrees to buy Varonis for $6.3B, the latest identity and data-security deal justified by agents</td></tr>
+        <tr><td>15 Sep 2026</td><td>Reachability</td><td>New Cloudflare domains that show ads start blocking assistant fetchers such as ChatGPT-User by default</td></tr>
+        <tr><td>15 Sep 2026</td><td>Identity</td><td>The IETF WIMSE group adopts AIMS, a profile for authenticating agents</td></tr>
+        <tr><td>1 Sep 2026</td><td>Identity</td><td>The IETF adopts the core Web Bot Auth draft as a working-group document</td></tr>
+        <tr><td>24 Aug 2026</td><td>Identity</td><td>Okta Agent SSO, built on Cross App Access, becomes generally available</td></tr>
+        <tr><td>Aug 2026</td><td>Transport</td><td>A2A joins MCP in the Linux Foundation's Agentic AI Foundation</td></tr>
+        <tr><td>6 Aug 2026</td><td>Commerce</td><td>An appeals court sides with Perplexity in Amazon's suit over its shopping agent</td></tr>
+        <tr><td>2 Aug 2026</td><td>Law</td><td>EU AI Act Article 50 requires disclosure when people interact with AI</td></tr>
+        <tr><td>28 Jul 2026</td><td>Transport</td><td>MCP revision 2026-07-28 drops sessions and adds server discovery</td></tr>
+        <tr><td>18 Jun 2026</td><td>Identity</td><td>MCP Enterprise-Managed Authorization, built on ID-JAG, becomes a stable extension</td></tr>
+        <tr><td>Jun 2026</td><td>Negotiation</td><td>Chain launches an agent that negotiates loads with carriers</td></tr>
+        <tr><td>May 2026</td><td>Email</td><td>DMARC reaches the standards track as RFC 9989, more than two years after Gmail required it</td></tr>
+        <tr><td>1 May 2026</td><td>Identity</td><td>Microsoft Agent 365 becomes generally available</td></tr>
+        <tr><td>27–28 Apr 2026</td><td>Consent</td><td>Google gives AP2 and Mastercard gives Verifiable Intent to the FIDO Alliance, which forms an Agentic Authentication working group</td></tr>
+        <tr><td>9 Apr 2026</td><td>Transport</td><td>A2A passes 150 supporting organizations</td></tr>
+        <tr><td>2 Apr 2026</td><td>Payment</td><td>The x402 Foundation launches under the Linux Foundation with 40 members</td></tr>
+        <tr><td>12 Mar 2026</td><td>Transport</td><td>A2A 1.0 ships</td></tr>
+        <tr><td>10 Mar 2026</td><td>Commerce</td><td>A court blocks Perplexity's agent from shopping on Amazon</td></tr>
+        <tr><td>Mar 2026</td><td>Negotiation</td><td>project44's Freight Procurement Agent becomes generally available</td></tr>
+        <tr><td>Mar 2026</td><td>Commerce</td><td>ChatGPT scales its native checkout back to product discovery</td></tr>
+        <tr><td>5 Feb 2026</td><td>Identity</td><td>NIST's NCCoE publishes its concept paper on agent identity, leaving external agents out of scope</td></tr>
+        <tr><td>Feb 2026</td><td>Identity</td><td>Palo Alto Networks closes its purchase of CyberArk, about $25B</td></tr>
+        <tr><td>Jan 2026</td><td>Commerce</td><td>Google and Shopify announce the Universal Commerce Protocol</td></tr>
+        <tr><td>9 Dec 2025</td><td>Transport</td><td>Anthropic donates MCP to the new Agentic AI Foundation</td></tr>
+        <tr><td>Nov 2025</td><td>Chat</td><td>WhatsApp opens third-party chats in Europe under the Digital Markets Act</td></tr>
+        <tr><td>Oct 2025</td><td>Identity</td><td>Visa announces its Trusted Agent Protocol, built with Cloudflare</td></tr>
+        <tr><td>Sep 2025</td><td>Payment</td><td>Google announces AP2; OpenAI and Stripe announce ACP</td></tr>
+        <tr><td>29 Aug 2025</td><td>Transport</td><td>IBM's Agent Communication Protocol merges into A2A</td></tr>
+        <tr><td>Jul 2025</td><td>Reachability</td><td>Cloudflare blocks AI training crawlers by default on new domains</td></tr>
+        <tr><td>Apr 2025</td><td>Transport</td><td>Google announces A2A</td></tr>
+        <tr><td>Nov 2024</td><td>Transport</td><td>Anthropic releases MCP</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="col">
   <h2>Email: the receivers moved first</h2>
-  <p>SMTP assumed honest senders, and for 24 to 33 years nothing checked them. SPF arrived in 2006 (<a href="https://www.rfc-editor.org/rfc/rfc4408">RFC 4408</a>), DKIM in 2007 (<a href="https://www.rfc-editor.org/rfc/rfc4871">RFC 4871</a>), and DMARC in 2015 (<a href="https://www.rfc-editor.org/rfc/rfc7489">RFC 7489</a>). DMARC then sat as an informational document for eleven years. It reached the standards track as <a href="https://www.rfc-editor.org/rfc/rfc9989">RFC 9989</a> only in May 2026, more than two years after Gmail began requiring a DMARC record from anyone sending more than 5,000 messages a day (<a href="https://support.google.com/a/answer/81126">Google</a>). Google's bar was low. A policy of <code>p=none</code>, which enforces nothing, is acceptable.</p>
-  <p>The bolt-on stayed uneven. In 2022, fifteen years after the first DKIM standard, only 28.1% of the top million domains had DKIM enabled, and 2.9% of those were misconfigured (<a href="https://www.usenix.org/conference/usenixsecurity22/presentation/wang-chuhan">Wang et al., USENIX Security 2022</a>). Most mail providers could detect spoofing "but still allow forged emails to reach the user inbox," and only 9 of 35 showed any visual warning (<a href="https://www.usenix.org/conference/usenixsecurity18/presentation/hu">Hu and Wang, USENIX Security 2018</a>). Administrators held back because deploying brought little benefit unless everyone else deployed too (<a href="https://doi.org/10.1109/SecDev.2018.00020">Hu et al., SecDev 2018</a>).</p>
+  <p>SMTP assumed honest senders, and for 24 to 33 years nothing checked them. SPF arrived in 2006 (<a href="https://www.rfc-editor.org/rfc/rfc4408">RFC 4408</a>), DKIM in 2007 (<a href="https://www.rfc-editor.org/rfc/rfc4871">RFC 4871</a>), and DMARC in 2015 (<a href="https://www.rfc-editor.org/rfc/rfc7489">RFC 7489</a>). DMARC then sat as an informational document for 11 years. It reached the standards track as <a href="https://www.rfc-editor.org/rfc/rfc9989">RFC 9989</a> only in May 2026, more than two years after Gmail began requiring a DMARC record from anyone sending more than 5,000 messages a day (<a href="https://support.google.com/a/answer/81126">Google</a>). Google's bar was low. A policy of <code>p=none</code>, which enforces nothing, is acceptable.</p>
+  <p>The bolt-on stayed uneven. In 2022, 15 years after the first DKIM standard, only 28.1% of the top million domains had DKIM enabled, and 2.9% of those were misconfigured (<a href="https://www.usenix.org/conference/usenixsecurity22/presentation/wang-chuhan">Wang et al., USENIX Security 2022</a>). Most mail providers could detect spoofing "but still allow forged emails to reach the user inbox," and only 9 of 35 showed any visual warning (<a href="https://www.usenix.org/conference/usenixsecurity18/presentation/hu">Hu and Wang, USENIX Security 2018</a>). Administrators held back because deploying brought little benefit unless everyone else deployed too (<a href="https://doi.org/10.1109/SecDev.2018.00020">Hu et al., SecDev 2018</a>).</p>
   <p>Spam showed who governs an open transport. Infiltrating the Storm botnet revealed that tiny response rates pay when sending costs nearly nothing (<a href="https://doi.org/10.1145/1455770.1455774">Kanich et al., CCS 2008</a>). Tracing spam's value chain found its chokepoint in a handful of banks that processed the payments (<a href="https://doi.org/10.1109/SP.2011.24">Levchenko et al., IEEE S&amp;P 2011</a>). Filtering by large providers became the main defense (<a href="https://doi.org/10.1257/jep.26.3.87">Rao and Reiley, JEP 2012</a>). Agents make persuasive, personalized messages cheaper still, which makes the receiver's filter worth more.</p>
   <p>The agent parallel is direct. Cloudflare, Akamai, and AWS verify Web Bot Auth signatures in production, and the IETF's core document has been a working-group draft only since September 2026.</p>
 
@@ -117,7 +162,7 @@
 </div>
 <nav class="pager" aria-label="Reading order"><a class="prev" href="../protocols/"><small>Previous</small><span>Protocols</span></a><a class="next" href="../actors/"><small>Next</small><span>Actors</span></a></nav>
 <footer class="colophon">
-  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Every figure links to its source; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Figures link to their sources where a public source exists; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
 </footer>
 </main>
 </body>
