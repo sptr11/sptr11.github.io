@@ -331,6 +331,46 @@ html {
   margin: 0;
 }
 
+/* ── Projects (about page) ── */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.post-content .project {
+  background: var(--entry);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.post-content .project h3 {
+  font-size: 17px;
+  margin: 0 0 6px;
+}
+
+.post-content .project p {
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+
+.project-links {
+  display: flex;
+  gap: 16px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.post-content .project-links a {
+  color: var(--secondary);
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ── Responsive tweaks ── */
 @media (max-width: 768px) {
   .post-title {
@@ -348,5 +388,9 @@ html {
   .about-intro {
     flex-direction: column;
     text-align: center;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
   }
 }

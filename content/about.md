@@ -18,3 +18,30 @@ The thread through my career is launching things from scratch. I co-founded Bain
 Each of those taught me something different about what it takes to go from nothing to something real. The consulting years taught me how to frame problems. The startup years taught me that framing is worthless without execution. The product years taught me that execution without taste produces mediocre things that technically work.
 
 I studied computer science, then spent years in strategy consulting before switching to building. I've been working on AI-native products since before it was fashionable.
+
+These days I also build small products on the side, all around one idea. A person and their agent now work as a pair, and most of our tools were built for one or the other. These are my attempts at tools built for both.
+
+## projects
+
+<div class="projects">
+  <div class="project">
+    <h3>Pluck</h3>
+    <p>Forms that any AI assistant can read, fill in, and submit.</p>
+    <div class="project-links"><a href="https://pluck.one">pluck.one</a><a href="/journal/pluck/">the story</a></div>
+  </div>
+  <div class="project">
+    <h3>Cristina</h3>
+    <p>A shared home for the web pages your AI makes.</p>
+    <div class="project-links"><a href="https://cristina.cc">cristina.cc</a><a href="/journal/cristina/">the story</a></div>
+  </div>
+  <div class="project">
+    <h3>AgentFax</h3>
+    <p>Send your agent's work to someone outside the chat. Open source.</p>
+    <div class="project-links"><a href="https://github.com/sptr11/agentfax">github</a><a href="/journal/agentfax/">the story</a></div>
+  </div>
+  <div class="project">
+    <h3>seriousvibes</h3>
+    <p>A starter kit that gives coding agents the right patterns to copy. Open source.</p>
+    <div class="project-links"><a href="https://github.com/sptr11/seriousvibes">github</a><a href="/journal/seriousvibes/">the story</a></div>
+  </div>
+</div>
