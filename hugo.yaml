@@ -21,9 +21,12 @@ menu:
     - name: notes
       url: /moments/
       weight: 2
+    - name: projects
+      url: /projects/
+      weight: 3
     - name: about
       url: /about/
-      weight: 3
+      weight: 4
 
 params:
   defaultTheme: light
