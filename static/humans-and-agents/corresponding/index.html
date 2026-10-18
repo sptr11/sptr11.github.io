@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Writing to another company · How humans and agents talk</title>
+<meta name="description" content="Most work between two companies still moves by email. Agents now draft much of it and people still press Send. It is plausibly the largest cross-company agent channel, nobody measures it, and attacks arrive the same way.">
+<link rel="canonical" href="https://sptr11.github.io/humans-and-agents/corresponding/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Writing to another company">
+<meta property="og:description" content="Most work between two companies still moves by email. Agents now draft much of it and people still press Send. It is plausibly the largest cross-company agent channel, nobody measures it, and attacks arrive the same way.">
+<meta property="og:url" content="https://sptr11.github.io/humans-and-agents/corresponding/">
+<meta property="og:site_name" content="How humans and agents talk">
+<meta name="author" content="Sumit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="../">How humans and agents talk</a>
+    <nav class="nav" aria-label="Sections"><a href="../inside/">Inside a company</a><a href="../#across">Across companies</a><a href="../protocols/">Protocols</a><a href="../history/">History</a><a href="../actors/">Actors</a><a href="../missing/">What's missing</a><a href="../method/">Method</a></nav>
+  </div>
+</header>
+<main>
+<div class="col">
+  <p class="kicker">Across companies · 2</p>
+  <h1>Writing to another company</h1>
+  <p class="dek">Most work between two companies still moves by email: the question to a vendor, the update to a client, the reply to a supplier. Agents now draft a lot of it. People still press Send.</p>
+  <p class="asof">Evidence current to 18 October 2026</p>
+
+  <h2>Who's involved</h2>
+  <p>A person and their agent on one side, a person and their agent on the other. The agent drafts the message, and on the receiving end another agent reads it first and drafts the reply. Each person reviews and sends.</p>
+  <p>This is plausibly the largest kind of cross-company agent traffic, and nobody measures it. No study tracks what share of legitimate business email is written by AI. The closest measurement covers malicious mail. A study of 481,558 filtered emails found that by April 2025 at least 51% of spam and about 14% of business email compromise was written by a language model (<a href="https://www.cs.columbia.edu/~junfeng/papers/ai-email-imc25.pdf">Hao et al., IMC 2025</a>). Business email compromise is targeted, businesslike prose, so it's the best available stand-in for ordinary professional mail.</p>
+  <p>Some agents now have addresses of their own. AgentMail issues email inboxes to agents, raised a $6M seed round in March 2026, and reports more than 500 business customers (<a href="https://thenextweb.com/news/agentmail-raises-6m-seed-ai-agent-email-inboxes">The Next Web</a>).</p>
+
+  <h2>How the messages travel</h2>
+  <p>Mostly by email, because email needs nobody's permission. It reaches any company with no setup between the two sides, at about 362B messages a day (<a href="https://radicati.com/wp/wp-content/uploads/2024/10/Email-Statistics-Report-2024-2028-Executive-Summary.pdf">Radicati, 2024</a>).</p>
+  <p>Shared channels are the other option, and they need both companies to opt in. Slack Connect reached 77 of the Fortune 100 by 2022 (<a href="https://slack.com/blog/transformation/fortune-100-rely-slack-connect-build-digital-hq">Slack</a>). Teams shared channels need both tenants to set up B2B direct connect, and they limit third-party apps to an allowlist by default (<a href="https://learn.microsoft.com/microsoftteams/shared-channels">Microsoft</a>). An agent posting into a shared channel inherits that two-sided approval. An agent sending email doesn't, which is why most of this traffic goes by email.</p>
+  <p>The trust inside a shared channel is thinner than it looks. Slack's verified-organization badge works at the level of the company, and Slack says it "cannot fully guarantee that an organization's identity is legitimate" (<a href="https://slack.com/help/articles/360057439733">Slack Help</a>). In 2023 Slack's engineers wrote that its policy controls "are not connection aware" (<a href="https://slack.engineering/managing-slack-connect/">Slack Engineering</a>).</p>
+  <p>Agent protocols have barely reached this kind of work. A2A has more than 150 supporting organizations and no named deployment between two companies. A2A lets an agent sign the card that describes it but doesn't require it, and the first crawl of those cards found seven on 10 hosts, none signed (<a href="https://github.com/YugantM/hvtracker/pull/346">hvtracker</a>).</p>
+
+  <h2>Who approves</h2>
+  <p>Each sender, one message at a time. The Send button is the whole control, and security research says that's the right design. Simon Willison calls the dangerous combination the "lethal trifecta": an agent that reads untrusted input, can reach private data, and has a way to send (<a href="https://simonwillison.net/2025/Jul/06/supabase-mcp-lethal-trifecta/">Willison</a>). An agent that reads the other company's mail and drafts a reply, with a person sending it, avoids the third leg.</p>
+  <p>The attacks that matter already arrive this way. In each well-known case, content from outside the company reached an agent inside it: an external email in EchoLeak, a web form in ForcedLeak. The first malicious MCP server quietly blind-copied every email it sent to an attacker, after 1,643 downloads (<a href="https://koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft">Koi</a>).</p>
+  <p>The weak point is the person pressing Send. People approve 93% of permission prompts (<a href="https://anthropic.com/engineering/claude-code-auto-mode">Anthropic</a>), and in one MCP attack, extra whitespace pushed the stolen data off the edge of the approval screen (<a href="https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/">Willison</a>). Palo Alto Networks' Unit 42 says approval has to run through a channel "the LLM cannot influence" (<a href="https://unit42.paloaltonetworks.com/agent-session-smuggling-in-agent2agent-systems/">Unit 42</a>). If the drafting agent also writes the approval screen, that test fails.</p>
+
+  <h2>What's missing</h2>
+  <p>Proof of which company sent a message. Email solved half of this: DKIM lets the receiver check the sending domain. A message delivered as a link has no equivalent. It proves which server hosted the page, not which company wrote it. The parts for a fix exist, since A2A cards can be signed and Web Bot Auth publishes keys at a fixed path on the sender's domain. Nobody has applied them to a message a person sends.</p>
+  <p>An approval step the agent can't shape. That means showing the raw outbound fields instead of the agent's summary, flagging unusual recipients and attachments, and drawing the screen from somewhere the agent can't reach. OpenAI says prompt injection "is unlikely to ever be fully 'solved'" and compares it to scams (<a href="https://fortune.com/2025/12/23/openai-ai-browser-prompt-injections-cybersecurity-hackers/">Fortune</a>). If that holds, the defense will look like email's: verified senders, filtering at the receiver, and a person who can see what they're approving.</p>
+</div>
+<nav class="pager" aria-label="Reading order"><a class="prev" href="../inside/"><small>Previous</small><span>Inside a company</span></a><a class="next" href="../systems/"><small>Next</small><span>Using another company&#x27;s systems</span></a></nav>
+<footer class="colophon">
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Figures link to their sources where a public source exists; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
+</footer>
+</main>
+</body>
+</html>

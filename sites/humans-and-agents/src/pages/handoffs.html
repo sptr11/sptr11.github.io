@@ -1,0 +1,28 @@
+<!--
+title: Agents handing work to agents
+description: Only two public deployments put one company's AI agent to work with another company's, and neither is binding. Where agents do exchange business documents across companies, fixed rules on the other side do the checking.
+-->
+<div class="col">
+  <p class="kicker">Across companies · 4</p>
+  <h1>Agents handing work to agents</h1>
+  <p class="dek">The picture most people have of agent-to-agent work is two companies' agents settling a support ticket or a purchase order between themselves. Only two public deployments come close, and neither commits anyone to anything.</p>
+  <p class="asof">Evidence current to 18 October 2026</p>
+
+  <h2>Who's involved</h2>
+  <p>I catalogued 25 public deployments in which agent work crosses a company line. Two put an AI agent on both sides. Tyson Foods and Gordon Food Service piloted A2A so their agents could exchange product data and sales leads (<a href="https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade">Google Cloud</a>). In 2023 Luminance had two instances of its software negotiate a nondisclosure agreement, with lawyers watching and a person signing at the end (<a href="https://www.cnbc.com/2023/11/07/ai-negotiates-legal-contract-without-humans-involved-for-first-time.html">CNBC</a>). That's the whole list.</p>
+  <p>There may be more agent-to-agent traffic than anyone has documented, hidden inside channels built for people. In freight, brokers use agents from Chain, HappyRobot, and project44 to reach carriers, and carriers use agents from Hey Bubba and Fleetworks to answer them, over the same inboxes, phone lines, and load boards (<a href="https://freightwaves.com/news/5-hours-to-book-a-truck-ai-is-coming-for-that">FreightWaves</a>). Some of those conversations are probably agent to agent, with neither side aware of it. No source documents it yet.</p>
+  <p>Some handoffs you'd expect don't show up at all. I found no public case of one company's support agent escalating to another company's support agent, no exchange between a health insurer's agent and a provider's agent over prior authorization, and no cross-company HR exchange. In prior authorization, a clinician still owns every denial.</p>
+
+  <h2>How the work travels</h2>
+  <p>Where agents do exchange business documents across companies at volume, the other side is a set of rules. Orderful, SPS Commerce, and Cleo now use AI to build EDI documents such as purchase orders, invoices, and shipping notices, and each one is checked against the retailer's EDI guidelines before it goes out. Orderful says one supplier went live with Home Depot in 10 days (<a href="https://www.orderful.com/blog/best-ai-edi-platforms-2026">Orderful, company figure</a>). The agent saves the supplier weeks of setup, but no agent sits on the retailer's side.</p>
+  <p>That pattern holds across the catalog. Agent-to-agent exchange between companies exists where one side is deterministic: a price list, a set of validation rules, a spending cap. These are agents dealing with systems, not two reasoning agents working something out.</p>
+  <p>The protocol built for the other case, A2A, has more than 150 supporting organizations, built-in support in Microsoft and AWS agent platforms, and no named deployment between two companies beyond the Tyson pilot (<a href="https://linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year">Linux Foundation</a>).</p>
+
+  <h2>Who sets the limits</h2>
+  <p>In the Tyson pilot the limits are implied rather than written down, which is easy when nothing binding is exchanged. In the EDI case, the retailer's guidelines decide what's valid and the supplier conforms. When two reasoning agents meet, the research shows why limits matter. In Microsoft's Magentic Marketplace simulation, every model tested took the first acceptable offer 60% to 100% of the time (<a href="https://arxiv.org/html/2510.25779v1">Bansal et al., 2025</a>), so the counterparty that answers first wins.</p>
+  <p>The attacks specific to agent-to-agent channels are still lab demonstrations. Palo Alto Networks' Unit 42 showed "agent session smuggling," in which a remote agent slips covert instructions into an ongoing A2A session, and notes that signed Agent Cards stop impersonation but not "a trusted agent from being subverted" (<a href="https://unit42.paloaltonetworks.com/agent-session-smuggling-in-agent2agent-systems/">Unit 42</a>). Keysight showed Agent Card poisoning, where the card describing an agent carries the attack (<a href="https://keysight.com/blogs/en/tech/nwvs/2026/03/12/agent-card-poisoning">Keysight</a>).</p>
+
+  <h2>What's missing</h2>
+  <p>A way for two agents to compare limits before they start. Real agent-to-agent work between companies needs each side to disclose what it may agree to, and to check the other side's, before trading anything. The multi-agent research of the 1990s had a name for the neutral setting where that happens, the electronic institution, with roles and rules imposed from outside both parties (<a href="https://doi.org/10.1007/3-540-44682-6_8">Esteva et al., 2001</a>). It only ever worked in closed settings agreed in advance, and nothing current replaces it.</p>
+  <p>Evidence of what's out there. No one has run a large crawl for the cards that A2A agents publish. The only crawler found ran a 10-host trial in October 2026 and found seven cards, six valid and none signed (<a href="https://github.com/YugantM/hvtracker/pull/346">hvtracker</a>). Until someone counts, the size of this cell is a guess.</p>
+</div>

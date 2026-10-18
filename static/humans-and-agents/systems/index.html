@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using another company&#x27;s systems · How humans and agents talk</title>
+<meta name="description" content="An agent can reach a vendor&#x27;s app when its person already has an account there, through the company&#x27;s identity provider. Beyond that, identity and access tools stop at the company line, and edge networks decide which agent requests get through.">
+<link rel="canonical" href="https://sptr11.github.io/humans-and-agents/systems/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using another company&#x27;s systems">
+<meta property="og:description" content="An agent can reach a vendor&#x27;s app when its person already has an account there, through the company&#x27;s identity provider. Beyond that, identity and access tools stop at the company line, and edge networks decide which agent requests get through.">
+<meta property="og:url" content="https://sptr11.github.io/humans-and-agents/systems/">
+<meta property="og:site_name" content="How humans and agents talk">
+<meta name="author" content="Sumit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="../">How humans and agents talk</a>
+    <nav class="nav" aria-label="Sections"><a href="../inside/">Inside a company</a><a href="../#across">Across companies</a><a href="../protocols/">Protocols</a><a href="../history/">History</a><a href="../actors/">Actors</a><a href="../missing/">What's missing</a><a href="../method/">Method</a></nav>
+  </div>
+</header>
+<main>
+<div class="col">
+  <p class="kicker">Across companies · 3</p>
+  <h1>Using another company's systems</h1>
+  <p class="dek">Your agent can work in a vendor's app if you already have an account there. Past that point, the identity tools stop at the company line, and the network in front of the vendor's site decides what gets through.</p>
+  <p class="asof">Evidence current to 18 October 2026</p>
+
+  <h2>Who's involved</h2>
+  <p>An agent acting for an employee at one company, and the systems of another: a SaaS vendor's app, a supplier's API or MCP server, a partner's documentation or status page. Sometimes the other side is a person who has to grant access. More often it's software deciding automatically whether to let the request in.</p>
+
+  <h2>How the requests travel</h2>
+  <p>The cleanest path is into a vendor your company already uses. With MCP's Enterprise-Managed Authorization, built on an IETF draft called ID-JAG and sold by Okta as Cross App Access, your company's identity provider grants your agent access to the vendor's app on your behalf (<a href="https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/">MCP</a>; <a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/">ID-JAG -04</a>). No API key, no consent screen. The grant lasts about five minutes and is re-issued as needed, so the company can cut access centrally.</p>
+  <p>That path works because you already exist at the vendor. Your company bought the app, provisioned you as a user, and connected its identity provider. In effect the vendor is hosting your company's data, and your agent is reaching back into it. The vendor's own agents, and companies you have no account with, are outside it.</p>
+  <p>The other path is the open web: an agent reading a partner's documentation, pricing, or status page. Those requests are plain HTTP, judged by whatever network sits in front of the site. Cloudflare sits in front of 27.6% of all websites (<a href="https://w3techs.com/technologies/comparison/cn-cloudflare">W3Techs</a>). Since 15 September 2026, its new domains that show ads block assistant fetchers such as ChatGPT-User by default (<a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare</a>). Agents can sign their requests with Web Bot Auth, now an IETF working-group draft, and Cloudflare, Akamai, and AWS check those signatures (<a href="https://datatracker.ietf.org/group/webbotauth/documents/">IETF</a>). A signature tells the site which company runs the agent. It does "not express authorization, delegation, or consent" (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-webbotauth-httpsig-protocol-00">draft-00</a>).</p>
+
+  <h2>Who sets the limits</h2>
+  <p>The vendor, and only for people it already knows. On paper, two IETF drafts can express "Company A's agent, acting for person P at A, may do X at Company B": ID-JAG and OAuth Identity Chaining. Both require B to trust A's identity provider in advance and to recognize P. Identity Chaining tells B to "deny the request if it cannot identify the subject" (<a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining/">Identity Chaining -17</a>).</p>
+  <p>The big platforms draw the line in the same place. Microsoft says Entra agent identities "can't access resources or APIs in other tenants" (<a href="https://learn.microsoft.com/en-us/entra/agent-id/agent-identities">Microsoft Learn</a>). NIST left agents from outside the organization out of its first project on agent identity (<a href="https://www.nccoe.nist.gov/sites/default/files/2026-02/accelerating-the-adoption-of-software-and-ai-agent-identity-and-authorization-concept-paper.pdf">NCCoE</a>). The only IETF draft written specifically for an agent acting on a user's behalf expired in February 2026 without being adopted (<a href="https://datatracker.ietf.org/doc/html/draft-oauth-ai-agents-on-behalf-of-user-02">draft-02</a>).</p>
+  <p>On the consumer side there's a draft model worth borrowing. The Personal Agent Protocol proposes a ladder: any agent may search, an agent may see an account after the person signs in on the company's own page, and it may act with the person's approval (<a href="https://personalagentprotocol.org/">Personal Agent Protocol, draft 0.2</a>). It has no adopters yet, and it assumes the person has an account at the company.</p>
+
+  <h2>What's missing</h2>
+  <p>A way for one company to vouch for its employee to another company. No shipped product lets your identity provider tell a supplier "this is Priya from our procurement team, and her agent may read your quote" when Priya has no account at the supplier. Every working path either assumes an account already exists or goes through a person who grants access by hand.</p>
+  <p>Graduated permissions between companies. The consumer ladder of search, see, and act maps naturally onto business relationships, with the rungs tied to a contract instead of a personal sign-in. Nothing like it exists yet.</p>
+  <p>A way to say that a person is waiting. The standards in flight identify which company runs an agent. None of them tells the receiving site that one employee asked a specific question and is waiting for the answer, which is what a supplier deciding whether to answer actually wants to know.</p>
+</div>
+<nav class="pager" aria-label="Reading order"><a class="prev" href="../corresponding/"><small>Previous</small><span>Writing to another company</span></a><a class="next" href="../handoffs/"><small>Next</small><span>Agents handing work to agents</span></a></nav>
+<footer class="colophon">
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Figures link to their sources where a public source exists; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
+</footer>
+</main>
+</body>
+</html>

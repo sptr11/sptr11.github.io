@@ -21,18 +21,18 @@
 <header class="masthead">
   <div class="masthead-inner">
     <a class="brand" href="../">How humans and agents talk</a>
-    <nav class="nav" aria-label="Sections"><a href="../">Use cases</a><a href="../protocols/" aria-current="page">Protocols</a><a href="../history/">History</a><a href="../actors/">Actors</a><a href="../missing/">What's missing</a><a href="../method/">Method</a></nav>
+    <nav class="nav" aria-label="Sections"><a href="../inside/">Inside a company</a><a href="../#across">Across companies</a><a href="../protocols/" aria-current="page">Protocols</a><a href="../history/">History</a><a href="../actors/">Actors</a><a href="../missing/">What's missing</a><a href="../method/">Method</a></nav>
   </div>
 </header>
 <main>
 <div class="col">
   <p class="kicker">Background · the stack</p>
   <h1>Protocols</h1>
-  <p class="dek">Every layer of the agent stack now has a serious contender except the top one: a record, between organizations, of what a person approved. That layer exists only for payments.</p>
+  <p class="dek">Every layer of the agent stack has a serious contender except the top one: a record, between companies, of what a person approved. That layer exists only for payments.</p>
   <p class="asof">Evidence current to 18 October 2026 · statuses checked against specification text, the IETF Datatracker, and the RFC Editor</p>
 
-  <p class="lede">The stack is being built from the bottom up, the way email's was. Transport is settled enough to build on, and it is neutral. MCP, A2A, AGENTS.md, goose, and agentgateway all sit in the Linux Foundation's Agentic AI Foundation, whose platinum members include AWS, Anthropic, Google, Microsoft, and OpenAI (<a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Linux Foundation</a>). x402 has its own Linux Foundation home. AP2 and Verifiable Intent sit at the FIDO Alliance.</p>
-  <p>That arrangement largely removes the risk that agent networks close the way consumer chat did. The competition has moved up a layer, to identity, registries, and verification.</p>
+  <p>For an agent at one company to work with someone at another, a stack of things has to line up. The agent has to be able to reach the other side and find what to talk to. The other side has to know who it is and who it's acting for. Then the message has to move, someone may have to pay, and someone has to have approved it. Every one of those layers now has at least one serious contender except the last.</p>
+  <p>The bottom of the stack is settled and neutral. MCP, A2A, AGENTS.md, goose, and agentgateway all sit in the Linux Foundation's <a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Agentic AI Foundation</a>, whose platinum members include AWS, Anthropic, Google, Microsoft, and OpenAI. x402 has its own Linux Foundation home, and AP2 and Verifiable Intent sit at the FIDO Alliance. So agent transport probably won't close up the way consumer chat did. The competition has moved up to identity, registries, and verification.</p>
 </div>
 
 <div class="wide">
@@ -102,7 +102,7 @@
 
 <div class="col">
   <h2>How the standards handle delegation and consent</h2>
-  <p>A cross-company agent exchange needs six things to be checkable: which organization sent it, which agent, on behalf of which named person, within what scope, whether the authority can be withdrawn, and whether a record survives. The scorecard rates 13 standards on those six properties, from the specification text rather than vendor descriptions.</p>
+  <p>For a cross-company exchange to hold up, six things need to be checkable: which organization sent it, which agent, on behalf of which named person, within what scope, whether the authority can be withdrawn, and whether a record survives. The scorecard rates 13 standards on those six properties, from the specification text rather than vendor descriptions.</p>
   <p><strong>F</strong> means a third party can verify the property cryptographically. <strong>P</strong> means it holds only inside one domain, depends on an optional field, or proves who sent a request without proving what was authorized. <strong>N</strong> means it is out of scope.</p>
 </div>
 <div class="wide">
@@ -139,11 +139,9 @@
   <p>No reviewed standard defines a revocation list or endpoint for agent delegations. Everything relies on short lifetimes: about five minutes for an ID-JAG grant, 60 seconds in Identity Chaining's examples, 24 hours or less for a Web Bot Auth signature. Web Bot Auth says outright that removing a key "is not a revocation mechanism." Short lifetimes work for grants that are re-issued every few minutes. They fail for the delegations a cross-company agent would actually hold, such as Verifiable Intent's autonomous mandates, valid for up to 30 days.</p>
 
   <h2>Company A's agent, acting for a person, at Company B</h2>
-  <p>On paper, two drafts can express it: ID-JAG and OAuth Identity Chaining. Both let A's identity provider issue a signed grant naming the person, which B's authorization server redeems. Both also require B to trust A's identity provider in advance and to know the person already. Identity Chaining tells B to "deny the request if it cannot identify the subject" (<a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining/">Identity Chaining -17</a>).</p>
-  <p>In practice, Okta's Cross App Access works mostly inside one customer: the software vendor can resolve the person because the person is already a provisioned user of that customer's account at the vendor. That is A's data hosted by B, not B's agent serving a stranger. Microsoft says Entra agent identities "can't access resources or APIs in other tenants." NIST says managing external agents from untrusted sources "will not be addressed under this initial effort." The only agent-specific on-behalf-of draft at the IETF expired in February 2026 without adoption (<a href="https://datatracker.ietf.org/doc/html/draft-oauth-ai-agents-on-behalf-of-user-02">draft-02</a>).</p>
-  <p>No shipped product lets one company's identity provider vouch for a person to another company's agent when that person has no account there. The Personal Agent Protocol routes around the problem for consumers, because the person signs in on the company's own page. Between two companies, that route doesn't exist.</p>
+  <p>Two drafts can express this on paper, ID-JAG and OAuth Identity Chaining, and both require Company B to trust A's identity provider in advance and to already know the person (<a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining/">Identity Chaining -17</a>). In practice that means the person already has an account at B. No shipped product lets one company's identity provider vouch for an employee to another company where the employee has no account. The <a href="../systems/">Using another company's systems</a> page walks through what does and doesn't work today.</p>
 </div>
-<nav class="pager" aria-label="Reading order"><a class="prev" href="../correspondence/"><small>Previous</small><span>Correspondence between companies</span></a><a class="next" href="../history/"><small>Next</small><span>History</span></a></nav>
+<nav class="pager" aria-label="Reading order"><a class="prev" href="../negotiating/"><small>Previous</small><span>Negotiating and buying</span></a><a class="next" href="../history/"><small>Next</small><span>History</span></a></nav>
 <footer class="colophon">
   <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Figures link to their sources where a public source exists; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
 </footer>

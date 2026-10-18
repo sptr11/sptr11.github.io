@@ -146,25 +146,9 @@ h3 {
   margin: 2.25rem 0 0.4rem;
 }
 p { margin: 0 0 1.1rem; }
-.lede::first-letter {
-  font-family: var(--display);
-  float: left;
-  font-size: 4.6rem;
-  line-height: 0.82;
-  padding: 0.35rem 0.55rem 0 0;
-  color: var(--accent);
-}
 strong { font-weight: 650; }
 code { font-family: var(--mono); font-size: 0.86em; background: var(--paper-2); padding: 0.08em 0.3em; border-radius: 3px; word-break: break-word; }
 
-.pull {
-  font-family: var(--display);
-  font-size: 1.85rem;
-  line-height: 1.22;
-  border-left: 2px solid var(--accent);
-  padding: 0.1rem 0 0.1rem 1.1rem;
-  margin: 2.2rem 0;
-}
 
 /* ---------- the four questions on use-case pages ---------- */
 
@@ -231,6 +215,7 @@ figcaption { font-size: 0.82rem; line-height: 1.5; color: var(--muted); margin-t
   font-size: 0.86rem;
   line-height: 1.42;
 }
+.grid.split { grid-template-columns: 11rem repeat(2, minmax(14rem, 1fr)); min-width: 36rem; }
 .grid .hd { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding: 0 0.2rem 0.3rem; align-self: end; }
 .grid .rowhd { font-weight: 650; padding: 0.7rem 0.4rem 0.7rem 0; }
 .grid .rowhd .g { margin-right: 0.15em; }
@@ -246,7 +231,7 @@ figcaption { font-size: 0.82rem; line-height: 1.5; color: var(--muted); margin-t
 .key i { display: inline-block; width: 0.85rem; height: 0.85rem; border-radius: 3px; vertical-align: -0.12em; margin-right: 0.35rem; border: 1px solid var(--rule); }
 
 @media (max-width: 44rem) {
-  .grid { grid-template-columns: 1fr; min-width: 0; gap: 6px; }
+  .grid, .grid.split { grid-template-columns: 1fr; min-width: 0; gap: 6px; }
   .grid .hd { display: none; }
   .grid .rowhd { padding: 1.1rem 0 0.2rem; }
   .grid .rowhd br { display: none; }
@@ -320,6 +305,5 @@ figcaption { font-size: 0.82rem; line-height: 1.5; color: var(--muted); margin-t
 @media (max-width: 30rem) {
   body { font-size: 1.06rem; }
   h2 { font-size: 1.75rem; }
-  .pull { font-size: 1.5rem; }
-  .dek { font-size: 1.15rem; }
+    .dek { font-size: 1.15rem; }
 }

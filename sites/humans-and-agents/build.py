@@ -26,11 +26,12 @@ AS_OF = "Evidence current to 18 October 2026"
 # Reading order. "index" is the home page.
 ORDER = [
     "index",
-    "buying",
-    "paying",
-    "your-agent",
-    "reading",
-    "correspondence",
+    "inside",
+    "corresponding",
+    "systems",
+    "handoffs",
+    "approvals",
+    "negotiating",
     "protocols",
     "history",
     "actors",
@@ -40,7 +41,8 @@ ORDER = [
 ]
 
 NAV = [
-    ("index", "Use cases"),
+    ("inside", "Inside a company"),
+    ("across", "Across companies"),
     ("protocols", "Protocols"),
     ("history", "History"),
     ("actors", "Actors"),
@@ -73,6 +75,8 @@ def parse(path):
 
 
 def href(root, slug):
+    if slug == "across":
+        return f"{root}#across"
     return root if slug == "index" else f"{root}{slug}/"
 
 
