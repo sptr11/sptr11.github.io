@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actors · How humans and agents talk</title>
+<meta name="description" content="Who wants what in the agent stack, where the fights are, and where the money has gone. Acquirers have paid about $41B for trust-layer companies; no company yet reports material agent revenue.">
+<link rel="canonical" href="https://sptr11.github.io/humans-and-agents/actors/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Actors">
+<meta property="og:description" content="Who wants what in the agent stack, where the fights are, and where the money has gone. Acquirers have paid about $41B for trust-layer companies; no company yet reports material agent revenue.">
+<meta property="og:url" content="https://sptr11.github.io/humans-and-agents/actors/">
+<meta property="og:site_name" content="How humans and agents talk">
+<meta name="author" content="Sumit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="../">How humans and agents talk</a>
+    <nav class="nav" aria-label="Sections"><a href="../">Use cases</a><a href="../protocols/">Protocols</a><a href="../history/">History</a><a href="../actors/" aria-current="page">Actors</a><a href="../missing/">What's missing</a><a href="../method/">Method</a></nav>
+  </div>
+</header>
+<main>
+<div class="col">
+  <p class="kicker">Background · interests</p>
+  <h1>Actors</h1>
+  <p class="dek">The companies that matter most made their transport protocols neutral, then moved one layer up to compete on identity, registries, and verification. That is where lock-in returned for email.</p>
+  <p class="asof">Evidence current to 18 October 2026</p>
+
+  <p class="lede">SMTP stayed open, and Gmail and Outlook became email's regulators anyway. The agent stack is arranging itself the same way. MCP and A2A sit in a neutral foundation. The contest is over who verifies agents, who keeps the registry of real ones, and who sits in front of the websites agents need to read.</p>
+</div>
+
+<div class="wide">
+  <div class="table-wrap xl">
+    <table>
+      <thead><tr><th>Group</th><th>Examples</th><th>What they want</th><th>Leverage</th><th>Risk to a neutral consent layer between companies</th></tr></thead>
+      <tbody>
+        <tr><td>Frontier labs</td><td>Anthropic, OpenAI, Google DeepMind</td><td>Their assistant as the user's agent everywhere, on a commodity layer beneath it</td><td>Hundreds of millions of users; donated MCP, AGENTS.md, and A2A</td><td>Medium. They want reach, not to referee disputes between companies</td></tr>
+        <tr><td>Identity vendors</td><td>Okta, Microsoft Entra, Ping, WorkOS, Descope</td><td>To own "who is this agent, and for whom does it act"</td><td>The enterprise directory; ID-JAG</td><td>High for identity. Low for content-level policy, which they don't inspect</td></tr>
+        <tr><td>Collaboration platforms</td><td>Slack and Salesforce, Microsoft Teams, Atlassian, Zoom</td><td>Agents working inside their channels, including shared ones</td><td>The existing cross-company graph</td><td>Highest. They own the venue where cross-company work already happens</td></tr>
+        <tr><td>Hyperscalers</td><td>Microsoft, Google Cloud, AWS</td><td>Agent hosting, with a registry tied to their directory</td><td>Agent 365, Vertex AI, Bedrock; A2A in their platforms</td><td>Medium. Their registries stop at the tenant boundary</td></tr>
+        <tr><td>Payment networks</td><td>Visa, Mastercard, Stripe, Coinbase, PayPal</td><td>Liability rules and proof of consent for agent purchases</td><td>Card rails and dispute systems; AP2 at FIDO; the x402 Foundation</td><td>Low outside commerce. They are the template for a consent layer</td></tr>
+        <tr><td>Edge and bot management</td><td>Cloudflare, Akamai, AWS WAF, HUMAN, Vercel</td><td>To decide, and price, which agents reach which sites</td><td>Sit in front of a large share of the web; verify Web Bot Auth</td><td>High for reachability. The edge can make any agent surface invisible</td></tr>
+        <tr><td>Commerce platforms</td><td>Shopify, Walmart, Target, Etsy</td><td>To stay merchant of record and keep the customer</td><td>UCP; buyer power over suppliers</td><td>Low. But a hub like Walmart can require a protocol of its supply base</td></tr>
+        <tr><td>Standards and public bodies</td><td>IETF, W3C, Linux Foundation, FIDO Alliance, OpenID Foundation, NIST</td><td>Legitimacy, interoperability, security baselines</td><td>Convening power; NIST's influence on procurement</td><td>None. They supply neutrality others can borrow</td></tr>
+        <tr><td>Regulators</td><td>EU (Digital Markets Act; AI Act Article 50), FTC, FCC, state legislatures</td><td>Disclosure that a person is talking to software; interoperability</td><td>Mandates</td><td>Indirect. Disclosure rules raise the value of a provable sender</td></tr>
+        <tr><td>Startups in the gaps</td><td>AgentMail, Pactum, Sierra, Decagon, Browserbase</td><td>A layer the incumbents leave open</td><td>Speed and neutrality</td><td>None</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="col">
+  <h2>The verifiers are consolidating</h2>
+  <p>Identity companies are being bought, and the buyers cite agents by name. Palo Alto Networks closed its purchase of CyberArk, about $25B, in February 2026 (<a href="https://washingtonexec.com/2026/02/palo-alto-networks-wraps-cyberark-acquisition/">WashingtonExec</a>). ServiceNow paid about $1.2B for Veza (<a href="https://www.sec.gov/Archives/edgar/data/0001373715/000137371526000076/now-20260630.htm">ServiceNow 10-Q</a>). CrowdStrike bought SGNL for about $740M, its chief executive calling "every agent a privileged identity" (<a href="https://securityboulevard.com/2026/01/crowdstrike-acquires-sgnl-for-740-million-to-thwart-ai-powered-cyber-threats/">Security Boulevard</a>). Okta bought Axiom and Permiso (<a href="https://www.sec.gov/Archives/edgar/data/0001660134/000166013426000069/okta-20260731.htm">Okta 10-Q</a>). The number of independent identity verifiers is shrinking.</p>
+
+  <h2>Three conflicts to watch</h2>
+  <h3>Whose identity is the agent?</h3>
+  <p>The consumer account ("my ChatGPT") or the employer's directory ("Acme's agent, acting for Priya")? ID-JAG puts the employer in charge at work, but only where the employer routes agents through enterprise sign-in. Workers at more than 90% of companies use personal AI tools for work, while only 40% of companies buy an official subscription (<a href="https://virtualizationreview.com/articles/2025/08/19/mit-report-finds-most-ai-business-investments-fail-reveals-genai-divide.aspx">MIT NANDA via Virtualization Review</a>). For consumers, the Personal Agent Protocol answers one way: the agent belongs to the person, and the company decides what it may do after the person signs in. At work, the question is open, and everyday use is tilting it toward the consumer account.</p>
+  <h3>The toll on reading</h3>
+  <p>This is now a default setting rather than a forecast. Since 15 September 2026, new Cloudflare domains that show ads block "Agent" fetchers by default, and Cloudflare counts ChatGPT-User as an agent (<a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare</a>). Cloudflare sits in front of 27.6% of all websites (<a href="https://w3techs.com/technologies/comparison/cn-cloudflare">W3Techs</a>), and it is moving from charging per crawl to paying publishers per use in answers. If assistant reads are blocked or priced by default, anything that relies on an assistant reading a link loses.</p>
+  <h3>Open transport, closed registries</h3>
+  <p>Half of this is settled. Transport is neutral, and enforcement is concentrated in a few edges that verify the same Web Bot Auth signatures. Registries are still scattered across edge directories, identity providers' agent directories, and payment schemes such as Visa's Trusted Agent Protocol and Mastercard Agent Pay (<a href="https://www.akamai.com/blog/security/2025/nov/redefine-trust-web-bot-authentication">Akamai</a>). Whoever consolidates the registry plays Gmail's role.</p>
+
+  <h2>Where the money has gone</h2>
+  <p>Measured by deals, money is going to the companies that broker trust. Measured by revenue, nobody can tell yet.</p>
+</div>
+<div class="wide">
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Layer</th><th>Notable deals and rounds, 2025 to 2026</th><th>Size</th></tr></thead>
+      <tbody>
+        <tr><td>Identity and data security, justified by machine and agent identities</td><td>Palo Alto–CyberArk, ServiceNow–Armis, ServiceNow–Veza, CrowdStrike–SGNL, Okta–Axiom, Proofpoint–<a href="https://finance.yahoo.com/technology/ai/articles/proofpoint-pays-6-3b-varonis-180936041.html">Varonis</a> (announced Oct 2026)</td><td>About $41B combined</td></tr>
+        <tr><td>Agent security startups</td><td>Protect AI, Robust Intelligence, Koi, Lakera, Pangea, Prompt Security, CalypsoAI</td><td>About $2.3B combined, mostly reported prices; roughly 5 to 15 times capital raised</td></tr>
+        <tr><td>Agent identity rounds</td><td>Oasis $120M, Noma $100M, Clerk $50M, Keycard $38M</td><td>$38M to $120M per round</td></tr>
+        <tr><td>Tool connectivity</td><td>Composio $25M, Arcade $60M; Workday bought <a href="https://siliconangle.com/2025/11/19/workday-acquire-pipedream-extend-ai-agent-integrations-across-enterprise-apps/">Pipedream</a> after it raised $22.4M</td><td>Rounds of $11M to $60M; exits small or undisclosed</td></tr>
+        <tr><td>Payments</td><td>Stripe–Bridge ($1.1B, closed Feb 2025); Tempo $500M at $5B</td><td>Large, but driven by stablecoin rails, not agent volume</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="col">
+  <p>Revenue tells a different story. Okta said in May 2026 that its AI-agent products were "not materially contributing" (<a href="https://fool.com/earnings/call-transcripts/2026/05/28/okta-okta-q1-2027-earnings-call-transcript">earnings call</a>). Cloudflare is the clearest earner among the brokers, with $696.1M of revenue in the second quarter of 2026, up 36% (<a href="https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000053/q226exhibit991.htm">Cloudflare 8-K</a>), but it sells delivery and verification together, so its numbers can't separate the two.</p>
+  <p>Email offers the cleanest precedent. Proofpoint, which filters mail, passed $1B in revenue in 2020 and was taken private for $12.3B (<a href="https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-enters-definitive-agreement-be-acquired-thoma-bravo-123-billion">Proofpoint</a>). SendGrid, the largest email-sending service, had $111.9M of revenue in 2017 while sending 450B emails (<a href="https://www.sec.gov/Archives/edgar/data/0001477425/000155837018001105/f10-k.htm">SendGrid 10-K</a>). The filter was worth far more than the pipe.</p>
+</div>
+<nav class="pager" aria-label="Reading order"><a class="prev" href="../history/"><small>Previous</small><span>History</span></a><a class="next" href="../missing/"><small>Next</small><span>What&#x27;s missing</span></a></nav>
+<footer class="colophon">
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Every figure links to its source; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
+</footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How humans and agents talk</title>
+<meta name="description" content="A field guide to how people and AI agents exchange messages within and across companies: the use cases, the protocols, the history, the actors, and the missing consent layer.">
+<link rel="canonical" href="https://sptr11.github.io/humans-and-agents/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How humans and agents talk">
+<meta property="og:description" content="A field guide to how people and AI agents exchange messages within and across companies: the use cases, the protocols, the history, the actors, and the missing consent layer.">
+<meta property="og:url" content="https://sptr11.github.io/humans-and-agents/">
+<meta property="og:site_name" content="How humans and agents talk">
+<meta name="author" content="Sumit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap">
+<link rel="stylesheet" href="./assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="./">How humans and agents talk</a>
+    <nav class="nav" aria-label="Sections"><a href="./" aria-current="page">Use cases</a><a href="./protocols/">Protocols</a><a href="./history/">History</a><a href="./actors/">Actors</a><a href="./missing/">What's missing</a><a href="./method/">Method</a></nav>
+  </div>
+</header>
+<main>
+<div class="col">
+  <p class="kicker">A field guide · October 2026</p>
+  <h1>How humans and agents talk</h1>
+  <p class="dek">Software agents now send messages for people. Almost none of those messages reach another company's agent. This guide covers where they go instead, what carries them, and what is still missing.</p>
+  <p class="asof">Evidence current to 18 October 2026 · Five use cases, five background chapters, 221 sources</p>
+
+  <p class="lede">For three decades the internet carried messages between two kinds of endpoint, people and servers. Between 2024 and 2026 a third arrived. A delegated agent is software that acts for a named person, reads and writes ordinary language, and can do things with consequences. It books, pays, negotiates, and writes email.</p>
+  <p>This guide asks a narrow question about that new endpoint. When an agent's message crosses from one company to another, who is on the other end, and who can prove what was approved? The answer, as of October 2026, is that a person usually is, and that almost nobody can prove it.</p>
+
+  <h2>What the evidence shows</h2>
+
+  <p><strong>Agents cross company lines by talking to people.</strong> Of 25 public cross-organization deployments catalogued for this study, two put language-model agents on both sides. One is a non-binding data-sharing pilot between <a href="https://cloud.google.com/blog/products/ai-machine-learning/agent2agent-protocol-is-getting-an-upgrade">Tyson Foods and Gordon Food Service</a>. The other is a <a href="https://www.cnbc.com/2023/11/07/ai-negotiates-legal-contract-without-humans-involved-for-first-time.html">contract-negotiation demo from 2023</a>. Everything with real volume follows one of three patterns: an agent dealing with the other firm's people, an agent paying or tendering against a posted price, or agents drafting while people send.</p>
+
+  <p><strong>One side always sets the limits.</strong> Every autonomous exchange runs inside limits fixed in advance, and anything outside them goes to a person. Walmart sets the ceiling its negotiation bot works within, and the supplier's representative accepts or declines. None of the 25 deployments shows two companies' agents disclosing and reconciling their limits with each other.</p>
+
+  <p><strong>Trust is being built in email's order, only faster, and from the receiving end.</strong> Email waited 24 to 33 years for sender authentication. Agents reached the same stage in about two. As with email, the receivers moved first: Cloudflare, Akamai, and AWS verify agent signatures in production, while the IETF's core document has been a working-group draft only since September 2026.</p>
+
+  <p><strong>Consent between strangers exists in one place, and it is payments.</strong> Only AP2 and Mastercard's Verifiable Intent record, in a form a stranger can check, what a named person authorized. They work because a card issuer vouches for the person. No standard can withdraw a long-lived agent delegation before it expires. Acquirers have paid about $41B for identity and data-security companies on the strength of machine and agent identities, yet no company reports material revenue from agents.</p>
+</div>
+
+<div class="wide">
+  <figure>
+    <p class="fig-title">Twelve ways a message can travel</p>
+    <div class="col" style="margin:0 0 1.25rem;max-width:var(--measure)">
+      <p>Every exchange has a mode and a scope. The mode is who composes and who sends on each side. The scope is how many trust domains the message crosses. The line that matters is not human versus machine. It is whether a party can bind the person or company it acts for.</p>
+      <p class="legend"><span class="g g-p"></span> person &nbsp;&nbsp; <span class="g g-a"></span> agent &nbsp;&nbsp; <span class="g g-pa"></span> person working through an agent</p>
+    </div>
+    <div class="grid-wrap">
+      <div class="grid" role="table" aria-label="Interaction mode by organizational scope">
+        <div class="hd" role="columnheader">Mode</div>
+        <div class="hd" role="columnheader">Direct, between individuals</div>
+        <div class="hd" role="columnheader">Within one company</div>
+        <div class="hd" role="columnheader">Across companies</div>
+
+        <div class="rowhd" role="rowheader"><span class="g g-p"></span> ↔ <span class="g g-p"></span><br>Person to person</div>
+        <div class="cell m4"><b>Messaging</b><span>Email, phone, and consumer chat. The EU is forcing WhatsApp to interoperate.</span></div>
+        <div class="cell m4"><b>Workplace chat</b><span>Slack and Teams, under one identity provider and one policy.</span></div>
+        <div class="cell m4"><b>Email and shared channels</b><span>About 362B emails a day need no setup. Shared channels need both sides to opt in.</span></div>
+
+        <div class="rowhd" role="rowheader"><span class="g g-p"></span> ↔ <span class="g g-a"></span><br>Person and agent</div>
+        <div class="cell m4"><b>Consumer assistants</b><span>900M+ weekly ChatGPT users (Feb 2026).</span></div>
+        <div class="cell m3"><b>Workplace copilots</b><span>62% of large firms experimenting, 23% scaling (mid-2025).</span></div>
+        <div class="cell m3"><b>Someone else's agent</b><span>Where cross-company agents actually work. The only cell disclosure law covers.</span></div>
+
+        <div class="rowhd" role="rowheader"><span class="g g-a"></span> ↔ <span class="g g-a"></span><br>Agent to agent</div>
+        <div class="cell m1"><b>Personal agent pairs</b><span>No shared protocol and little evidence.</span></div>
+        <div class="cell m2"><b>Multi-agent systems</b><span>A2A and MCP inside one trust domain.</span></div>
+        <div class="cell m1"><b>Only against posted prices</b><span>Paid APIs, card caps, EDI rules. Two LLM-to-LLM cases, neither binding.</span></div>
+
+        <div class="rowhd" role="rowheader"><span class="g g-pa"></span> ↔ <span class="g g-pa"></span><br>Both sides drafting</div>
+        <div class="cell m1"><b>Agent-drafted replies</b><span>The assistant drafts; the person sends.</span></div>
+        <div class="cell m2"><b>Drafts inside the tenant</b><span>Copilot drafting, with approvals in workflow.</span></div>
+        <div class="cell m1 focus"><b>Drafted on both ends</b><span>Plausibly the largest cell, and unmeasured. It runs over email and links.</span></div>
+      </div>
+    </div>
+    <div class="key"><span><i class="m4"></i>Mature</span><span><i class="m3"></i>Scaling</span><span><i class="m2"></i>Emerging</span><span><i></i>Thin evidence</span><span><i class="focus"></i>Largest unknown</span></div>
+    <figcaption>Maturity is the author's judgment from the evidence on the use-case pages. The across-companies column is where the rest of this guide spends its time.</figcaption>
+  </figure>
+</div>
+
+<div class="col">
+  <h2>Five use cases</h2>
+  <p>Each use case is answered with the same four questions, in the same order: who is on each end, what carries the message, who sets the limits and where a person approves, and what is missing.</p>
+  <ol class="cases">
+    <li><a href="./buying/"><span class="n">1</span><div><h3>Buying and negotiating</h3><p>A buyer's agent bargains with a supplier's person. The buyer writes every limit in advance.</p><span class="mode"><span class="g g-a"></span><span class="arrow">→</span><span class="g g-p"></span> agent to person, across companies</span></div></a></li>
+    <li><a href="./paying/"><span class="n">2</span><div><h3>Paying</h3><p>Agents pay against posted prices and spending caps. Payments hold the only consent record a stranger can verify.</p><span class="mode"><span class="g g-a"></span><span class="arrow">→</span><span class="g g-s"></span> agent to priced endpoint</span></div></a></li>
+    <li><a href="./your-agent/"><span class="n">3</span><div><h3>Your agent and a company</h3><p>A person's assistant phones a business, shops a store, or signs in to an account. The company decides how far to let it in.</p><span class="mode"><span class="g g-pa"></span><span class="arrow">→</span><span class="g g-p"></span> person's agent to a company</span></div></a></li>
+    <li><a href="./reading/"><span class="n">4</span><div><h3>Reading a page for someone</h3><p>Assistants fetch pages for people. The network edge now decides which of them get through.</p><span class="mode"><span class="g g-a"></span><span class="arrow">→</span><span class="g g-s"></span> assistant to website</span></div></a></li>
+    <li><a href="./correspondence/"><span class="n">5</span><div><h3>Correspondence between companies</h3><p>Agents draft and people send, mostly by email. Nobody measures how much, and the attacks arrive the same way.</p><span class="mode"><span class="g g-pa"></span><span class="arrow">↔</span><span class="g g-pa"></span> both sides drafting</span></div></a></li>
+  </ol>
+
+  <h2>Background</h2>
+</div>
+<div class="col">
+  <div class="chapters">
+    <a href="./protocols/"><b>Protocols</b><span>The stack layer by layer, and how 13 standards handle delegation and consent.</span></a>
+    <a href="./history/"><b>History</b><span>What email, chat, the web, EDI, and 1990s agent languages predict.</span></a>
+    <a href="./actors/"><b>Actors</b><span>Who wants what, where the fights are, and where the money has gone.</span></a>
+    <a href="./missing/"><b>What's missing</b><span>Six gaps in shipped standards and products, and who might close them.</span></a>
+    <a href="./method/"><b>Method</b><span>Definitions, hypotheses and their status, the open research, and the limits of this work.</span></a>
+  </div>
+</div>
+<nav class="pager" aria-label="Reading order"><a class="next" href="./buying/"><small>Next</small><span>Buying and negotiating</span></a></nav>
+<footer class="colophon">
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Every figure links to its source; company-reported and second-hand figures are marked. Full list on the <a href="./references/">references</a> page.</p>
+</footer>
+</main>
+</body>
+</html>

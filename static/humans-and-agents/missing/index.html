@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What&#x27;s missing · How humans and agents talk</title>
+<meta name="description" content="Six gaps in shipped standards and products as of October 2026, from a signed approval record for non-payment actions to a way for two companies&#x27; agents to exchange their limits.">
+<link rel="canonical" href="https://sptr11.github.io/humans-and-agents/missing/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What&#x27;s missing">
+<meta property="og:description" content="Six gaps in shipped standards and products as of October 2026, from a signed approval record for non-payment actions to a way for two companies&#x27; agents to exchange their limits.">
+<meta property="og:url" content="https://sptr11.github.io/humans-and-agents/missing/">
+<meta property="og:site_name" content="How humans and agents talk">
+<meta name="author" content="Sumit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="../">How humans and agents talk</a>
+    <nav class="nav" aria-label="Sections"><a href="../">Use cases</a><a href="../protocols/">Protocols</a><a href="../history/">History</a><a href="../actors/">Actors</a><a href="../missing/" aria-current="page">What's missing</a><a href="../method/">Method</a></nav>
+  </div>
+</header>
+<main>
+<div class="col">
+  <p class="kicker">Background · open problems</p>
+  <h1>What's missing</h1>
+  <p class="dek">The question for agents working across companies is not when agents will talk to agents. It is who sets the limits, and who can prove what was approved.</p>
+  <p class="asof">Evidence current to 18 October 2026</p>
+
+  <p class="lede">Every working autonomous exchange runs inside limits that one party set alone. Every working identity standard binds a person only inside a boundary that already exists. The one domain that has solved delegation between strangers, card payments, did it by adding a third-party issuer and a record the person signs. What's missing elsewhere is narrower than it first appears.</p>
+
+  <h2>Six gaps</h2>
+  <p>Each gap is something absent from shipped standards or products, not something waiting for adoption.</p>
+</div>
+<div class="wide">
+  <div class="table-wrap xl">
+    <table>
+      <thead><tr><th>Gap</th><th>What exists today</th><th>What is missing</th><th>Closest building blocks</th></tr></thead>
+      <tbody>
+        <tr><td>A signed approval record for actions that aren't payments</td><td>Payment mandates (AP2, Verifiable Intent); OAuth grants signed by an authorization server</td><td>A record, signed by the named person and checkable by a company with no prior relationship, of what they approved: counterparty, document, action, value cap, expiry</td><td>Verifiable Intent's three-layer chain, with the company's identity provider in the issuer role a bank plays in payments</td></tr>
+        <tr><td>Early revocation of standing delegations</td><td>Short token lifetimes; key removal; disabling an agent inside one tenant</td><td>A status list that withdraws a delegation before it expires, across companies</td><td>Credential status lists from verifiable credentials</td></tr>
+        <tr><td>Exchanging limits between two sides' agents</td><td>Limits set by one side; escalation to a person outside them</td><td>A way for both agents to disclose and check each other's limits before negotiating</td><td>Contract Net and electronic institutions; nothing current</td></tr>
+        <tr><td>Graduated permissions between two companies</td><td>Person to company: the Personal Agent Protocol's ladder (draft). Inside a company: Entra, ID-JAG</td><td>The same ladder between two organizations, tied to a contract rather than a personal account</td><td>The Personal Agent Protocol's model; A2A for transport</td></tr>
+        <tr><td>A provable company sender for agent-drafted messages sent by link</td><td>DKIM for email; Web Bot Auth for fetchers</td><td>Domain-level proof of which company sent a link-delivered message, not just which host served it</td><td>A2A Agent Card signing; Web Bot Auth key directories</td></tr>
+        <tr><td>An approval step the drafting agent can't rewrite</td><td>Permission prompts, approved 93% of the time; approval screens attackers can pad</td><td>Approval that shows raw outbound fields through a channel the agent can't influence, and makes unusual destinations stand out</td><td>Isolation design patterns; deterministic egress rules</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="col">
+  <h2>Enforcement has to be deterministic</h2>
+  <p>A gateway that asks a language model to judge whether a message is safe will behave like the detectors that adaptive attacks have already broken. One study broke all 12 published defenses it tested, most at more than 90% success; one product went from 0% to 90%, and another from 5% to 96% (<a href="https://arxiv.org/abs/2510.09023">Nasr et al., 2025</a>). Isolation by design holds up better. CaMeL completes 77% of tasks on the AgentDojo benchmark with provable security, against 84% with no defense at all (<a href="https://arxiv.org/abs/2503.18813">Debenedetti et al., 2025</a>).</p>
+  <p>The design-patterns literature states the principle plainly. Once an agent reads untrusted input, it "must be constrained so that it is impossible for that input to trigger any consequential actions" (<a href="https://arxiv.org/pdf/2506.08837">Beurer-Kellner et al., 2025</a>). For a consent layer between companies, that means rules that don't read the prose: field-level limits on what may leave, destination allowlists that expire, caps on value and rate, and one counterparty per session. ForcedLeak got through an allowlisted domain that had lapsed and cost about $5 to buy back.</p>
+
+  <h2>Adoption through hubs, usage through trust</h2>
+  <p>A hub buyer can require a consent layer of its suppliers, as Walmart required AS2. Freight's tender corridors and large retailers' supplier channels are the obvious candidates. A mandate buys compliance, not depth, so the record has to be worth something to the supplier as well. Payment mandates show how: they serve the merchant as evidence in a chargeback.</p>
+
+  <h2>Who might close the gaps</h2>
+  <p>The bodies most likely to fill the first three gaps have only just convened. FIDO's Agentic Authentication working group formed in April 2026 to cover delegated actions generally. The IETF's WIMSE group adopted its AIMS profile for agent authentication in September 2026. The W3C's Agent Identity Registry community group, proposed in April 2026, plans a protocol for negotiating trust between organizations. The OpenID Foundation's AI identity group says current frameworks don't handle recursive delegation or trust across domains (<a href="https://openid.net/new-whitepaper-tackles-ai-agent-identity-challenges/">OpenID Foundation</a>).</p>
+
+  <h2>Trust is arriving out of order</h2>
+  <p>Email got its trust layer last, decades after the transport. Agents are getting pieces of theirs early and in the wrong sequence. The edges enforce verification and price agent reads before the IETF has finished the signature standard. Acquirers pay billions for agent identity before any vendor reports agent revenue. The security literature settled on isolation and human approval before cross-company agent traffic existed in any volume.</p>
+  <p>Two consequences follow. Anything that depends on assistants reading a link will have its reachability decided by edge defaults it doesn't control. And the consent layer between companies may be claimed by acquisition or standardization before it is claimed by use. The specification work at FIDO and the IETF over the next two years is the thing to watch.</p>
+</div>
+<nav class="pager" aria-label="Reading order"><a class="prev" href="../actors/"><small>Previous</small><span>Actors</span></a><a class="next" href="../method/"><small>Next</small><span>Method</span></a></nav>
+<footer class="colophon">
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Every figure links to its source; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
+</footer>
+</main>
+</body>
+</html>

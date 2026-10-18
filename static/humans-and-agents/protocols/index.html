@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocols · How humans and agents talk</title>
+<meta name="description" content="The agent communication stack layer by layer, and how 13 standards handle delegation and consent. Every layer has a contender except consent between organizations, which exists only for payments.">
+<link rel="canonical" href="https://sptr11.github.io/humans-and-agents/protocols/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Protocols">
+<meta property="og:description" content="The agent communication stack layer by layer, and how 13 standards handle delegation and consent. Every layer has a contender except consent between organizations, which exists only for payments.">
+<meta property="og:url" content="https://sptr11.github.io/humans-and-agents/protocols/">
+<meta property="og:site_name" content="How humans and agents talk">
+<meta name="author" content="Sumit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="../">How humans and agents talk</a>
+    <nav class="nav" aria-label="Sections"><a href="../">Use cases</a><a href="../protocols/" aria-current="page">Protocols</a><a href="../history/">History</a><a href="../actors/">Actors</a><a href="../missing/">What's missing</a><a href="../method/">Method</a></nav>
+  </div>
+</header>
+<main>
+<div class="col">
+  <p class="kicker">Background · the stack</p>
+  <h1>Protocols</h1>
+  <p class="dek">Every layer of the agent stack now has a serious contender except the top one: a record, between organizations, of what a person approved. That layer exists only for payments.</p>
+  <p class="asof">Evidence current to 18 October 2026 · statuses checked against specification text, the IETF Datatracker, and the RFC Editor</p>
+
+  <p class="lede">The stack is being built from the bottom up, the way email's was. Transport is settled enough to build on, and it is neutral. MCP, A2A, AGENTS.md, goose, and agentgateway all sit in the Linux Foundation's Agentic AI Foundation, whose platinum members include AWS, Anthropic, Google, Microsoft, and OpenAI (<a href="https://www.linuxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation">Linux Foundation</a>). x402 has its own Linux Foundation home. AP2 and Verifiable Intent sit at the FIDO Alliance.</p>
+  <p>That arrangement largely removes the risk that agent networks close the way consumer chat did. The competition has moved up a layer, to identity, registries, and verification.</p>
+</div>
+
+<div class="wide">
+  <figure>
+    <p class="fig-title">The agent communication stack, October 2026</p>
+    <div class="stack">
+      <div class="layer empty">
+        <h4>Consent and audit between companies<small>Who approved what, provably</small></h4>
+        <div class="chips"><span class="chip dash">AP2 mandates · payments only</span><span class="chip dash">Verifiable Intent · payments only</span><span class="chip dash">FIDO Agentic Authentication WG · forming</span><span class="chip dash">W3C Agent Identity Registry CG · forming</span></div>
+      </div>
+      <div class="layer">
+        <h4>Payment and commitment<small>Who pays, under what limits</small></h4>
+        <div class="chips"><span class="chip">x402</span><span class="chip">AP2</span><span class="chip">ACP</span><span class="chip">UCP</span><span class="chip">Visa Trusted Agent Protocol</span><span class="chip">Mastercard Agent Pay</span></div>
+      </div>
+      <div class="layer">
+        <h4>Identity<small>Who is this, acting for whom</small></h4>
+        <div class="chips"><span class="chip">Web Bot Auth</span><span class="chip">ID-JAG / Okta Cross App Access</span><span class="chip">MCP Enterprise-Managed Authorization</span><span class="chip">IETF AIMS</span><span class="chip">Entra Agent ID</span><span class="chip">ANP did:wba</span></div>
+      </div>
+      <div class="layer">
+        <h4>Transport<small>How the message moves</small></h4>
+        <div class="chips"><span class="chip">MCP · agent to tool</span><span class="chip">A2A · agent to agent</span><span class="chip">Email and HTTP · everything else</span></div>
+      </div>
+      <div class="layer">
+        <h4>Discovery<small>How to find the other side</small></h4>
+        <div class="chips"><span class="chip">A2A Agent Card</span><span class="chip">MCP Registry</span><span class="chip">AGNTCY / OASF</span><span class="chip">Personal Agent Protocol manifest</span><span class="chip">llms.txt</span></div>
+      </div>
+      <div class="layer">
+        <h4>Reachability<small>Can an agent read it at all</small></h4>
+        <div class="chips"><span class="chip">robots.txt and content signals</span><span class="chip">Edge bot defaults</span><span class="chip">Edge signature verification</span></div>
+      </div>
+    </div>
+    <figcaption>Dashed: covers payments only, or not yet published. The layering is the author's; the protocols and their status are in the table below.</figcaption>
+  </figure>
+</div>
+
+<div class="col">
+  <h2>Who stewards what</h2>
+  <p>The table lists each protocol by layer, with its steward and its status as of October 2026. Several statuses changed within the eight weeks before publication, including A2A's steward and Web Bot Auth's standing at the IETF.</p>
+</div>
+<div class="wide">
+  <div class="table-wrap xl">
+    <table>
+      <thead><tr><th>Protocol</th><th>Layer</th><th>Steward</th><th>Launched</th><th>Status, October 2026</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://modelcontextprotocol.io/specification/2026-07-28/changelog">MCP</a></td><td>Transport, agent to tool</td><td>Agentic AI Foundation, from Anthropic</td><td>Nov 2024</td><td>Revision 2026-07-28 is stateless and adds <code>server/discover</code>. 97M+ monthly SDK downloads (Dec 2025); 18,849 registry entries (Jul 2026)</td></tr>
+        <tr><td><a href="https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth/">MCP Enterprise-Managed Authorization</a></td><td>Identity, agent for a user to an app</td><td>MCP</td><td>2026</td><td>Stable since Jun 2026; built on ID-JAG; Okta the only named identity provider</td></tr>
+        <tr><td><a href="https://github.com/a2aproject/A2A/releases">A2A</a></td><td>Transport, discovery</td><td>Agentic AI Foundation since Aug 2026, from Google; absorbed IBM's ACP in Aug 2025</td><td>Apr 2025</td><td>v1.0 (Mar 2026). Agent Card signing optional. 150+ supporters; no named deployment between two companies</td></tr>
+        <tr><td><a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/">ID-JAG</a> (Okta Cross App Access)</td><td>Identity, agent for a user to an app</td><td>IETF OAuth WG</td><td>2025</td><td>Draft -04 (May 2026). Okta Agent SSO GA Aug 2026; Okta names 14 partners</td></tr>
+        <tr><td><a href="https://datatracker.ietf.org/group/webbotauth/documents/">Web Bot Auth</a></td><td>Identity, agent to website</td><td>IETF webbotauth WG; Cloudflare and Google authors</td><td>2025</td><td>Core draft adopted Sep 2026. Verified in production by Cloudflare, Akamai, and AWS WAF</td></tr>
+        <tr><td><a href="https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/">IETF AIMS</a></td><td>Agent authentication profile</td><td>IETF WIMSE WG; authors from OpenAI, Okta, Ping, AWS, Zscaler</td><td>Sep 2026</td><td>Adopted Sep 2026. Composes OAuth, Transaction Tokens, ID-JAG, and SPIFFE</td></tr>
+        <tr><td><a href="https://learn.microsoft.com/en-us/entra/agent-id/agent-identities">Entra Agent ID / Agent 365</a></td><td>Identity, registry</td><td>Microsoft</td><td>2025</td><td>Agent 365 GA May 2026. Agent identities can't reach other tenants</td></tr>
+        <tr><td><a href="https://www.linuxfoundation.org/press/linux-foundation-welcomes-the-agntcy-project-to-standardize-open-multi-agent-system-infrastructure-and-break-down-ai-agent-silos">AGNTCY / OASF</a></td><td>Discovery, identity</td><td>Linux Foundation, from Cisco</td><td>Mar 2025</td><td>65+ supporting companies at donation (Jul 2025)</td></tr>
+        <tr><td><a href="https://github.com/agent-network-protocol/AgentNetworkProtocol">ANP</a></td><td>Discovery, identity (W3C DIDs)</td><td>Open source; W3C AI Agent Protocol CG</td><td>2025</td><td>Draft; few implementations</td></tr>
+        <tr><td><a href="https://www.w3.org/community/agent-identity/2026/04/24/call-for-participation-in-agent-identity-registry-protocol-community-group/">W3C Agent Identity Registry CG</a></td><td>Registry, trust between companies</td><td>W3C community group</td><td>Apr 2026</td><td>Plans a DID method, a credential format, and cross-company trust negotiation</td></tr>
+        <tr><td><a href="https://personalagentprotocol.org/">Personal Agent Protocol</a> ("Poppy")</td><td>Discovery, sign-in, permissions</td><td>Open source, Apache 2.0; steward not named</td><td>2026</td><td>Draft 0.2. A person's agent dealing with a company. No named adopters</td></tr>
+        <tr><td><a href="https://ap2-protocol.org/specification/">AP2</a></td><td>Payment, consent</td><td>FIDO Alliance since Apr 2026, from Google</td><td>Sep 2025</td><td>v0.2.0 (Apr 2026). Intent, cart, and payment mandates; 60+ supporters</td></tr>
+        <tr><td><a href="https://verifiableintent.dev/spec/credential-format">Mastercard Verifiable Intent</a></td><td>Consent, signed by the person</td><td>Mastercard and Google; contributed to FIDO</td><td>Mar 2026</td><td>v0.1 draft; three-layer signed chain</td></tr>
+        <tr><td><a href="https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21716.html">Visa Trusted Agent Protocol</a></td><td>Agent identity at checkout</td><td>Visa, with Cloudflare</td><td>Oct 2025</td><td>Reference code; built on HTTP Message Signatures</td></tr>
+        <tr><td><a href="https://www.digitalcommerce360.com/2026/03/06/openai-shifts-checkout-plans-agentic-commerce-strategy/amp/">ACP</a> (Agentic Commerce Protocol)</td><td>Payment, checkout</td><td>OpenAI and Stripe</td><td>Sep 2025</td><td>ChatGPT's native checkout scaled back to discovery in Mar 2026; the protocol continues</td></tr>
+        <tr><td><a href="https://blog.google/products-and-platforms/products/shopping/shopping-updates-google-marketing-live">UCP</a></td><td>Commerce</td><td>Google and Shopify</td><td>Jan 2026</td><td>Checkout in AI Mode and Gemini; expanding to Canada, Australia, and the UK</td></tr>
+        <tr><td><a href="https://docs.cdp.coinbase.com/x402/support/x402-foundation">x402</a></td><td>Payment per HTTP request</td><td>x402 Foundation (Linux Foundation), from Coinbase</td><td>2025</td><td>40 members, including Visa, Mastercard, Google, and Stripe</td></tr>
+        <tr><td><a href="https://fidoalliance.org/pymnts-google-and-mastercard-contribute-agentic-commerce-standards-to-fido-alliance/">FIDO Agentic Authentication WG</a></td><td>Delegating actions to agents</td><td>FIDO Alliance</td><td>Apr 2026</td><td>Newly formed; chaired by CVS Health, Google, and OpenAI</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="col">
+  <h2>How the standards handle delegation and consent</h2>
+  <p>A cross-company agent exchange needs six things to be checkable: which organization sent it, which agent, on behalf of which named person, within what scope, whether the authority can be withdrawn, and whether a record survives. The scorecard rates 13 standards on those six properties, from the specification text rather than vendor descriptions.</p>
+  <p><strong>F</strong> means a third party can verify the property cryptographically. <strong>P</strong> means it holds only inside one domain, depends on an optional field, or proves who sent a request without proving what was authorized. <strong>N</strong> means it is out of scope.</p>
+</div>
+<div class="wide">
+  <div class="table-wrap">
+    <table class="score">
+      <thead><tr><th>Standard and version</th><th>Organization</th><th>Agent</th><th>Named person</th><th>Scope</th><th>Revocation</th><th>Audit</th></tr></thead>
+      <tbody>
+        <tr><td>A2A 1.0</td><td>P</td><td>P</td><td class="N">N</td><td>P</td><td class="N">N</td><td class="N">N</td></tr>
+        <tr><td>MCP 2026-07-28 core</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td><td class="N">N</td></tr>
+        <tr><td>MCP Enterprise-Managed Authorization with ID-JAG -04</td><td class="F">F</td><td>P</td><td>P</td><td>P</td><td>P</td><td>P</td></tr>
+        <tr><td>OAuth Token Exchange (RFC 8693)</td><td class="N">N</td><td>P</td><td>P</td><td>P</td><td class="N">N</td><td>P</td></tr>
+        <tr><td>OAuth Identity Chaining -17</td><td class="F">F</td><td>P</td><td>P</td><td>P</td><td>P</td><td class="N">N</td></tr>
+        <tr><td>OAuth Transaction Tokens -11</td><td class="F">F, one domain</td><td>P</td><td>P, one domain</td><td>P</td><td>P</td><td>P</td></tr>
+        <tr><td>Web Bot Auth httpsig-00</td><td class="F">F, domain</td><td>P</td><td class="N">N</td><td class="N">N</td><td>P</td><td>P</td></tr>
+        <tr><td>AP2</td><td>P</td><td>P</td><td class="F">F</td><td class="F">F</td><td>P</td><td class="F">F</td></tr>
+        <tr><td>Mastercard Verifiable Intent v0.1</td><td class="F">F</td><td class="F">F</td><td class="F">F</td><td class="F">F</td><td>P</td><td class="F">F</td></tr>
+        <tr><td>Visa Trusted Agent Protocol</td><td class="F">F</td><td class="F">F</td><td>P</td><td>P</td><td>P</td><td>P</td></tr>
+        <tr><td>ANP did:wba 1.1</td><td class="F">F, domain</td><td class="F">F</td><td class="N">N</td><td class="N">N</td><td>P</td><td>P</td></tr>
+        <tr><td>Entra Agent ID</td><td class="F">F, tenant</td><td class="F">F</td><td>P, one tenant</td><td>P</td><td class="F">F, in tenant</td><td>P</td></tr>
+        <tr><td>Personal Agent Protocol draft 0.2</td><td class="F">F, domain</td><td>P</td><td>P, account at the company</td><td>P</td><td>P</td><td class="N">N</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="col">
+  <h3>Transport standards identify a domain and leave the person to someone else</h3>
+  <p>A2A says identity "is handled at the protocol layer, not within A2A semantics" (<a href="https://raw.githubusercontent.com/a2aproject/A2A/main/docs/specification.md">A2A specification</a>). Web Bot Auth signatures "do not express authorization, delegation, or consent." ANP's identity documents have no field for a human's authorization. The OAuth family does carry a named person, but only through an identity provider the other side already trusts, or inside one domain. ID-JAG requires the receiving side to "independently trust" the same identity provider, and makes the agent itself an optional claim (<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-identity-assertion-authz-grant-04.html">ID-JAG -04</a>).</p>
+
+  <h3>Only the payment mandates are signed by the person</h3>
+  <p>In OAuth, an authorization server signs on the user's behalf, which proves that policy was evaluated, not that the person agreed. In Verifiable Intent, an issuer binds the person to a key, the person signs a mandate with constraints, and the agent signs the final action. A merchant with no prior relationship to the person can check every link. Card payments are the one place delegation between strangers works, because the issuing bank supplies a trust root both sides already accept.</p>
+
+  <h3>Nothing can be withdrawn early</h3>
+  <p>No reviewed standard defines a revocation list or endpoint for agent delegations. Everything relies on short lifetimes: about five minutes for an ID-JAG grant, 60 seconds in Identity Chaining's examples, 24 hours or less for a Web Bot Auth signature. Web Bot Auth says outright that removing a key "is not a revocation mechanism." Short lifetimes work for grants that are re-issued every few minutes. They fail for the delegations a cross-company agent would actually hold, such as Verifiable Intent's autonomous mandates, valid for up to 30 days.</p>
+
+  <h2>Company A's agent, acting for a person, at Company B</h2>
+  <p>On paper, two drafts can express it: ID-JAG and OAuth Identity Chaining. Both let A's identity provider issue a signed grant naming the person, which B's authorization server redeems. Both also require B to trust A's identity provider in advance and to know the person already. Identity Chaining tells B to "deny the request if it cannot identify the subject" (<a href="https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-chaining/">Identity Chaining -17</a>).</p>
+  <p>In practice, Okta's Cross App Access works mostly inside one customer: the software vendor can resolve the person because the person is already a provisioned user of that customer's account at the vendor. That is A's data hosted by B, not B's agent serving a stranger. Microsoft says Entra agent identities "can't access resources or APIs in other tenants." NIST says managing external agents from untrusted sources "will not be addressed under this initial effort." The only agent-specific on-behalf-of draft at the IETF expired in February 2026 without adoption (<a href="https://datatracker.ietf.org/doc/html/draft-oauth-ai-agents-on-behalf-of-user-02">draft-02</a>).</p>
+  <p>No shipped product lets one company's identity provider vouch for a person to another company's agent when that person has no account there. The Personal Agent Protocol routes around the problem for consumers, because the person signs in on the company's own page. Between two companies, that route doesn't exist.</p>
+</div>
+<nav class="pager" aria-label="Reading order"><a class="prev" href="../correspondence/"><small>Previous</small><span>Correspondence between companies</span></a><a class="next" href="../history/"><small>Next</small><span>History</span></a></nav>
+<footer class="colophon">
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Every figure links to its source; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
+</footer>
+</main>
+</body>
+</html>

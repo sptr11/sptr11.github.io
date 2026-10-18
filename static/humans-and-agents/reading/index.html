@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading a page for someone · How humans and agents talk</title>
+<meta name="description" content="Assistants fetch web pages for the people who ask them questions. Edge networks now decide which of those fetches get through, and since September 2026 their defaults block some of them.">
+<link rel="canonical" href="https://sptr11.github.io/humans-and-agents/reading/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Reading a page for someone">
+<meta property="og:description" content="Assistants fetch web pages for the people who ask them questions. Edge networks now decide which of those fetches get through, and since September 2026 their defaults block some of them.">
+<meta property="og:url" content="https://sptr11.github.io/humans-and-agents/reading/">
+<meta property="og:site_name" content="How humans and agents talk">
+<meta name="author" content="Sumit">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400&display=swap">
+<link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="brand" href="../">How humans and agents talk</a>
+    <nav class="nav" aria-label="Sections"><a href="../">Use cases</a><a href="../protocols/">Protocols</a><a href="../history/">History</a><a href="../actors/">Actors</a><a href="../missing/">What's missing</a><a href="../method/">Method</a></nav>
+  </div>
+</header>
+<main>
+<div class="col">
+  <p class="kicker">Use case 4 · <span class="g g-a"></span> → <span class="g g-s"></span> assistant to website</p>
+  <h1>Reading a page for someone</h1>
+  <p class="dek">The simplest thing an agent does for a person is read a page. It is also the first agent activity that a few network edges have started to block by default.</p>
+  <p class="asof">Evidence current to 18 October 2026</p>
+
+  <div class="answer">
+    <span class="label">The short answer</span>
+    <p>An assistant fetches a page because a person asked a question. The request is ordinary HTTP. The site's edge network sets the limits, increasingly by default and without the site owner choosing. No approval step exists, and no signal tells the edge that a person is waiting for the answer.</p>
+  </div>
+
+  <p class="q">Who is on each end</p>
+  <h2>A person waiting, and a server deciding</h2>
+  <p>When someone asks ChatGPT, Claude, or Perplexity about a page, the assistant fetches it under a user agent such as ChatGPT-User or Claude-User. Cloudflare calls these "user action" fetches, and they were its fastest-growing category of AI traffic in 2025, up more than 15 times, with ChatGPT-User peaking at 16 times its January level (<a href="https://blog.cloudflare.com/radar-2025-year-in-review/">Cloudflare Radar 2025 Year in Review</a>).</p>
+  <p>The volume is still small. In June 2025 ChatGPT-User made up 1.06% of AI bot traffic, and training crawlers took the bulk. The crawlers also give little back: Cloudflare measured about 14 pages crawled for every visitor referred by Google, about 1,700 for OpenAI, and about 73,000 for Anthropic (<a href="https://blog.cloudflare.com/control-content-use-for-ai-training/">Cloudflare</a>). Those ratios are why site owners started blocking, and assistants reading for a person got caught in the same net.</p>
+  <p>Automation as a whole has passed people. A live Cloudflare Radar reading in June 2026 put bots at about 57.5% of HTML requests (<a href="https://radar.cloudflare.com/traffic">Cloudflare Radar</a>), about a year ahead of the CEO's own forecast (<a href="https://techcrunch.com/2026/03/19/online-bot-traffic-will-exceed-human-traffic-by-2027-cloudflare-ceo-says/">TechCrunch</a>). That figure counts all bots, not agents.</p>
+
+  <p class="q">What carries the message</p>
+  <h2>Plain HTTP, judged at the edge</h2>
+  <p>A fetch carries almost nothing about intent. The request names a user agent, which anyone can forge, and arrives at whatever sits in front of the site. Cloudflare sits in front of 27.6% of all websites and 85.8% of the sites whose reverse proxy is known (<a href="https://w3techs.com/technologies/comparison/cn-cloudflare">W3Techs, Oct 2026</a>).</p>
+  <p>Signatures are arriving to replace the forgeable name. Web Bot Auth lets an agent sign each request with HTTP Message Signatures (RFC 9421) and publish its keys in a directory the site can check. The IETF working group adopted its core draft on 1 September 2026, and Cloudflare, Akamai, and AWS WAF already verify signatures in production (<a href="https://datatracker.ietf.org/group/webbotauth/documents/">IETF</a>; <a href="https://aws.amazon.com/about-aws/whats-new/2025/11/aws-waf-web-bot-auth-support">AWS</a>). Cloudflare's first cohort of signed agents included OpenAI's ChatGPT agent, Block's Goose, Browserbase, and Anchor Browser (<a href="https://blog.cloudflare.com/signed-agents/">Cloudflare</a>). No source confirms that the plain user fetchers, the ones that read a link someone pasted, sign their requests.</p>
+  <p>The draft is careful about what a signature proves. It identifies the operator of the agent. It does "not express authorization, delegation, or consent" (<a href="https://datatracker.ietf.org/doc/html/draft-ietf-webbotauth-httpsig-protocol-00">draft-00</a>). A site learns that a request came from OpenAI, not which person asked or what they are allowed to see.</p>
+
+  <p class="q">Who sets the limits, and where a person approves</p>
+  <h2>The edge, by default</h2>
+  <p>robots.txt was supposed to decide this. It was a voluntary convention from 1994 that became a standard only in 2022 (<a href="https://www.rfc-editor.org/rfc/rfc9309">RFC 9309</a>), and peer-reviewed measurement finds it weak in practice while blocking at the network edge works (<a href="https://arxiv.org/abs/2411.15091">Liu et al., IMC 2025</a>). As sites restricted crawlers, the openly available training data shrank quickly (<a href="https://arxiv.org/abs/2407.14933">Longpre et al., 2024</a>).</p>
+  <p>Cloudflare's defaults now do most of the deciding. In July 2025 it began blocking AI training crawlers by default on new domains (<a href="https://blog.cloudflare.com/introducing-pay-per-crawl/">Cloudflare</a>). Its managed robots.txt disallows eight training bots, from GPTBot to ClaudeBot, and leaves user fetchers alone (<a href="https://developers.cloudflare.com/bots/additional-configurations/managed-robots-txt/">Cloudflare Docs</a>). Then, from 15 September 2026, new domains that show ads block "Agent" bots by default as well, and Cloudflare classes ChatGPT-User as an Agent. Its definition covers "real-time automated activity on a person's behalf, such as chat fetch bots and browser-use agents" (<a href="https://blog.cloudflare.com/content-independence-day-ai-options/">Cloudflare</a>; <a href="https://developers.cloudflare.com/bots/additional-configurations/block-ai-bots/">Cloudflare Docs</a>).</p>
+  <p class="pull">An assistant reading a page for one person now meets the same wall as a crawler copying the web.</p>
+  <p>Payment is becoming part of the same decision. Cloudflare's pay-per-crawl, which answers with HTTP 402, stayed in private beta, and in July 2026 the company moved toward paying publishers per use in answers. It also added a robots.txt signal, <code>use=immediate|reference|full</code>, that lets a site say whether its content may answer a person's question in the moment (<a href="https://ppc.land/cloudflare-stops-charging-ai-per-crawl-and-starts-paying-per-answer/">PPC Land</a>).</p>
+
+  <p class="q">What's missing</p>
+  <h2>A way to say a person is asking</h2>
+  <p>Roughly half of the most popular sites now refuse or time out a polite, identified crawler. A September 2026 scan for llms.txt files was blocked or timed out on 474 of the top 1,000 domains and 4,211 of the top 10,000 (<a href="https://www.rankability.com/data/llms-txt-adoption/">Rankability</a>). It found llms.txt on 9.3% of the top 1,000, so the true share among sites it could reach is higher.</p>
+  <p>Reachability is becoming a property of edge configuration that neither the reader nor the publisher fully controls. A link meant for one person's assistant can fail because the domain is new, because it shows ads, or because a default classified the fetcher as an agent. The standards in flight identify the company behind a fetch. None of them yet carries the fact that matters most to a publisher deciding whether to answer: one person asked, and is waiting.</p>
+</div>
+<nav class="pager" aria-label="Reading order"><a class="prev" href="../your-agent/"><small>Previous</small><span>Your agent and a company</span></a><a class="next" href="../correspondence/"><small>Next</small><span>Correspondence between companies</span></a></nav>
+<footer class="colophon">
+  <p>Evidence current to 18 October 2026. Written by <a href="https://sptr11.github.io/">Sumit</a>. Every figure links to its source; company-reported and second-hand figures are marked. Full list on the <a href="../references/">references</a> page.</p>
+</footer>
+</main>
+</body>
+</html>
